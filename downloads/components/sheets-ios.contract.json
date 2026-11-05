@@ -1,0 +1,299 @@
+{
+  "$schema": "trassir-mobile-contract/1",
+  "id": "sheets-ios",
+  "component": "Шторки, попапы и диалоги",
+  "version": "0.1.0",
+  "generated": "2026-10-22T16:12:15+03:00",
+  "description": "Контейнеров три, и выбор зависит ещё и от устройства. На iPad шторка превращается в попап по центру.",
+  "level": "styled",
+  "filled": false,
+  "figma": null,
+  "api": {
+    "variants": [],
+    "props": []
+  },
+  "states": [
+    "default",
+    "pressed",
+    "disabled",
+    "loading"
+  ],
+  "anatomy": [],
+  "platforms": {
+    "ios": [
+      {
+        "component": "AdaptiveSheet",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [
+          ".sheet",
+          "Button"
+        ],
+        "implements": null,
+        "source": {
+          "file": "iosApp/TrassirUIKit/Sources/TrassirUIKit/AdaptiveSheet.swift",
+          "line": 10
+        },
+        "props": [
+          {
+            "name": "isPresent",
+            "type": "Binding<Bool>",
+            "required": true
+          },
+          {
+            "name": "popUpSize",
+            "type": "CGSize",
+            "required": true
+          },
+          {
+            "name": "popUpBackgroundColor",
+            "type": "Color",
+            "required": true
+          },
+          {
+            "name": "sheetHeight",
+            "type": "Set<PresentationDetent>",
+            "required": false,
+            "default": "[.large]"
+          },
+          {
+            "name": "sheetContent",
+            "type": "@escaping () -> SheetContent",
+            "required": true
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "TrActionSheet",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [],
+        "implements": null,
+        "source": {
+          "file": "iosApp/TrassirUIKit/Sources/TrassirUIKit/TrActionSheet.swift",
+          "line": 10
+        },
+        "props": [
+          {
+            "name": "title",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "subtitle",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "icon",
+            "type": "Image?",
+            "required": false,
+            "default": "nil"
+          },
+          {
+            "name": "additionalContent",
+            "type": "@escaping () -> AdditionalContent",
+            "required": false,
+            "default": "{ EmptyView() }"
+          },
+          {
+            "name": "buttons",
+            "type": "@escaping () -> Buttons",
+            "required": true
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "TrBottomSheet",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [],
+        "implements": null,
+        "source": {
+          "file": "iosApp/TrassirUIKit/Sources/TrassirUIKit/BottomSheet.swift",
+          "line": 11
+        },
+        "props": [
+          {
+            "name": "isShowing",
+            "type": "Binding<Bool>",
+            "required": true
+          },
+          {
+            "name": "height",
+            "type": "CGFloat",
+            "required": true
+          },
+          {
+            "name": "backgroundColor",
+            "type": "Color",
+            "required": true
+          },
+          {
+            "name": "blur",
+            "type": "CGFloat",
+            "required": false,
+            "default": "ModuleConstants.Visual.blur"
+          },
+          {
+            "name": "isDismissible",
+            "type": "Bool",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "label",
+            "type": "@escaping () -> LabelContent",
+            "required": true
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "TrConfirmationDialog",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [
+          ".confirmationDialog",
+          "Button"
+        ],
+        "implements": null,
+        "source": {
+          "file": "iosApp/TrassirUIKit/Sources/TrassirUIKit/TrConfirmationDialog.swift",
+          "line": 10
+        },
+        "props": [
+          {
+            "name": "dialogType",
+            "type": "DialogType",
+            "required": true
+          },
+          {
+            "name": "showDialog",
+            "type": "Binding<Bool>",
+            "required": true
+          },
+          {
+            "name": "application",
+            "type": "UIApplication",
+            "required": false,
+            "default": "UIApplication.shared"
+          },
+          {
+            "name": "title",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "buttonTitle",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "buttonAction",
+            "type": "@escaping () async -> Void",
+            "required": true
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "TrPopupView",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [],
+        "implements": null,
+        "source": {
+          "file": "iosApp/TrassirUIKit/Sources/TrassirUIKit/TrPopupView.swift",
+          "line": 10
+        },
+        "props": [
+          {
+            "name": "isShowing",
+            "type": "Binding<Bool>",
+            "required": true
+          },
+          {
+            "name": "size",
+            "type": "CGSize",
+            "required": true
+          },
+          {
+            "name": "cornerRadius",
+            "type": "CGFloat",
+            "required": true
+          },
+          {
+            "name": "blur",
+            "type": "CGFloat",
+            "required": true
+          },
+          {
+            "name": "disabled",
+            "type": "Bool",
+            "required": true
+          },
+          {
+            "name": "backgroundColor",
+            "type": "Color",
+            "required": true
+          },
+          {
+            "name": "label",
+            "type": "@escaping () -> LabelContent",
+            "required": true
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "TrRegionPickerSheetView",
+        "level": "styled",
+        "levelChecked": false,
+        "base": [
+          ".sheet",
+          "Button"
+        ],
+        "implements": null,
+        "source": {
+          "file": "iosApp/TrassirUIKit/Sources/TrassirUIKit/TrRegionPickerSheetView.swift",
+          "line": 10
+        },
+        "props": [
+          {
+            "name": "items",
+            "type": "[RegionPickerModel]",
+            "required": true
+          },
+          {
+            "name": "selected",
+            "type": "Binding<RegionPickerModel>",
+            "required": true
+          },
+          {
+            "name": "chevronIcon",
+            "type": "Image",
+            "required": false,
+            "default": "SystemIcon.chevronDown"
+          },
+          {
+            "name": "navigationSheetTitle",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "accessibilityIDSheetXmark",
+            "type": "String",
+            "required": true
+          }
+        ],
+        "tokens": {}
+      }
+    ]
+  },
+  "tokenIndex": {},
+  "warnings": [],
+  "deviations": []
+}

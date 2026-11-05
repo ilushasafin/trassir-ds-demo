@@ -1,0 +1,178 @@
+{
+  "$schema": "trassir-mobile-contract/1",
+  "id": "toggles",
+  "component": "Переключатели и выбор",
+  "version": "0.1.0",
+  "generated": "2026-10-22T16:12:15+03:00",
+  "description": "",
+  "level": "custom",
+  "filled": false,
+  "figma": null,
+  "api": {
+    "variants": [],
+    "props": []
+  },
+  "states": [
+    "default",
+    "pressed",
+    "disabled",
+    "loading"
+  ],
+  "anatomy": [],
+  "platforms": {
+    "android": [
+      {
+        "component": "CircularCheckbox",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [],
+        "implements": null,
+        "source": {
+          "file": "trassir-uikit/src/main/java/com/uilibrary/ui/common/CircularCheckbox.kt",
+          "line": 59
+        },
+        "props": [
+          {
+            "name": "checked",
+            "type": "Boolean",
+            "required": true
+          },
+          {
+            "name": "onCheckedChange",
+            "type": "((Boolean) -> Unit)?",
+            "required": true
+          },
+          {
+            "name": "modifier",
+            "type": "Modifier",
+            "required": false,
+            "default": "Modifier"
+          },
+          {
+            "name": "enabled",
+            "type": "Boolean",
+            "required": false,
+            "default": "true"
+          },
+          {
+            "name": "colors",
+            "type": "CheckboxColors",
+            "required": false,
+            "default": "CheckboxDefaults.colors()"
+          },
+          {
+            "name": "interactionSource",
+            "type": "MutableInteractionSource?",
+            "required": false,
+            "default": "null"
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "CommonRadioItem",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [],
+        "implements": null,
+        "source": {
+          "file": "trassir-uikit/src/commonMain/kotlin/com/uilibrary/ui/common/CommonRadioItem.kt",
+          "line": 23
+        },
+        "props": [
+          {
+            "name": "name",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "contentDescription",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "isChecked",
+            "type": "Boolean",
+            "required": true
+          },
+          {
+            "name": "onClick",
+            "type": "() -> Unit",
+            "required": true
+          },
+          {
+            "name": "modifier",
+            "type": "Modifier",
+            "required": false,
+            "default": "Modifier"
+          },
+          {
+            "name": "padding",
+            "type": "PaddingValues",
+            "required": false,
+            "default": "PaddingValues()"
+          },
+          {
+            "name": "textStyle",
+            "type": "TextStyle",
+            "required": false,
+            "default": "MaterialTheme.typography.titleMedium"
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "SwitcherItem",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [
+          "Switch"
+        ],
+        "implements": null,
+        "source": {
+          "file": "trassir-uikit/src/commonMain/kotlin/com/uilibrary/ui/common/SwitcherItem.kt",
+          "line": 15
+        },
+        "props": [
+          {
+            "name": "modifier",
+            "type": "Modifier",
+            "required": false,
+            "default": "Modifier"
+          },
+          {
+            "name": "name",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "checked",
+            "type": "Boolean",
+            "required": true
+          },
+          {
+            "name": "isTitle",
+            "type": "Boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "enabled",
+            "type": "Boolean",
+            "required": false,
+            "default": "true"
+          },
+          {
+            "name": "onSwitched",
+            "type": "(checked: Boolean) -> Unit",
+            "required": true
+          }
+        ],
+        "tokens": {}
+      }
+    ]
+  },
+  "tokenIndex": {},
+  "warnings": [],
+  "deviations": []
+}

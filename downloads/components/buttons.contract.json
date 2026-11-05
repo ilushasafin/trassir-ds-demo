@@ -1,0 +1,1503 @@
+{
+  "$schema": "trassir-mobile-contract/1",
+  "id": "buttons",
+  "component": "Кнопки",
+  "version": "0.1.0",
+  "generated": "2026-10-22T16:12:15+03:00",
+  "description": "Одно действие — одна кнопка. Акцентная на экране одна, иначе пользователь не понимает, куда нажать.",
+  "level": "styled",
+  "filled": true,
+  "figma": {
+    "fileKey": "xpFu4Ca1MS2iNWMUnBskNE",
+    "nodeId": "5:2",
+    "nodes": {
+      "android": "5:23",
+      "ios": "5:47"
+    },
+    "url": "https://www.figma.com/design/xpFu4Ca1MS2iNWMUnBskNE/?node-id=5-2"
+  },
+  "api": {
+    "variants": [
+      {
+        "name": "style",
+        "options": [
+          "primary",
+          "secondary",
+          "outlined",
+          "text",
+          "destructive",
+          "white"
+        ],
+        "default": "primary"
+      },
+      {
+        "name": "state",
+        "options": [
+          "default",
+          "pressed",
+          "disabled",
+          "loading"
+        ],
+        "default": "default"
+      }
+    ],
+    "props": [
+      {
+        "name": "text",
+        "type": "text",
+        "default": "Кнопка"
+      },
+      {
+        "name": "icon",
+        "type": "instanceSwap",
+        "default": null
+      }
+    ]
+  },
+  "states": [
+    "default",
+    "pressed",
+    "disabled",
+    "loading"
+  ],
+  "anatomy": [
+    {
+      "part": "container"
+    },
+    {
+      "part": "icon",
+      "shownBy": "icon"
+    },
+    {
+      "part": "label",
+      "text": "text"
+    },
+    {
+      "part": "spinner",
+      "shownBy": "state=loading"
+    }
+  ],
+  "platforms": {
+    "android": [
+      {
+        "component": "ActionButton",
+        "level": "styled",
+        "levelChecked": true,
+        "base": [
+          "Button"
+        ],
+        "implements": {
+          "style": "primary"
+        },
+        "source": {
+          "file": "trassir-uikit/src/commonMain/kotlin/com/uilibrary/ui/common/ActionButton.kt",
+          "line": 29
+        },
+        "props": [
+          {
+            "name": "text",
+            "type": "String",
+            "required": true,
+            "figma": "text"
+          },
+          {
+            "name": "onClick",
+            "type": "() -> Unit",
+            "required": true
+          },
+          {
+            "name": "modifier",
+            "type": "Modifier",
+            "required": false,
+            "default": "Modifier"
+          },
+          {
+            "name": "icon",
+            "type": "Painter?",
+            "required": false,
+            "default": "null",
+            "figma": "icon"
+          },
+          {
+            "name": "colorButton",
+            "type": "ButtonColors",
+            "required": false,
+            "default": "ButtonDefaults.buttonColors()"
+          },
+          {
+            "name": "textColor",
+            "type": "Color",
+            "required": false,
+            "default": "Color.Unspecified"
+          },
+          {
+            "name": "shape",
+            "type": "Shape",
+            "required": false,
+            "default": "RoundedCornerShape(10.dp)"
+          },
+          {
+            "name": "enabled",
+            "type": "Boolean",
+            "required": false,
+            "default": "true"
+          }
+        ],
+        "tokens": {
+          "minHeight": {
+            "token": "size.44",
+            "value": "44px",
+            "origin": "literal"
+          },
+          "radius": {
+            "token": "radius.10",
+            "value": "10px",
+            "origin": "literal"
+          },
+          "paddingHorizontal": {
+            "token": "spacing.m",
+            "value": "12px",
+            "origin": "literal"
+          },
+          "paddingVertical": {
+            "token": "spacing.s",
+            "value": "8px",
+            "origin": "literal"
+          },
+          "typography": {
+            "token": "md.sys.typescale.labelLarge",
+            "value": "Inter 14px/1.43 500, трекинг 0.1px"
+          },
+          "color.light.default.container": {
+            "token": "md.sys.light.primary",
+            "value": "#7168E8",
+            "origin": "default"
+          },
+          "color.light.default.content": {
+            "token": "md.sys.light.onPrimary",
+            "value": "#F3EEFF",
+            "origin": "default"
+          },
+          "color.light.disabled.container": {
+            "token": "md.sys.light.onSurface",
+            "value": "#1C1B1F",
+            "origin": "default"
+          },
+          "color.light.disabled.content": {
+            "token": "md.sys.light.onSurface",
+            "value": "#1C1B1F",
+            "origin": "default"
+          },
+          "color.dark.default.container": {
+            "token": "md.sys.dark.primary",
+            "value": "#7168E8",
+            "origin": "default"
+          },
+          "color.dark.default.content": {
+            "token": "md.sys.dark.onPrimary",
+            "value": "#F3EEFF",
+            "origin": "default"
+          },
+          "color.dark.disabled.container": {
+            "token": "md.sys.dark.onSurface",
+            "value": "#FFFFFF",
+            "origin": "default"
+          },
+          "color.dark.disabled.content": {
+            "token": "md.sys.dark.onSurface",
+            "value": "#FFFFFF",
+            "origin": "default"
+          }
+        }
+      },
+      {
+        "component": "CommonFilledButton",
+        "level": "styled",
+        "levelChecked": true,
+        "base": [
+          "Button"
+        ],
+        "implements": {
+          "style": "primary"
+        },
+        "source": {
+          "file": "trassir-uikit/src/commonMain/kotlin/com/uilibrary/ui/common/CommonFilledButton.kt",
+          "line": 17
+        },
+        "props": [
+          {
+            "name": "modifier",
+            "type": "Modifier",
+            "required": false,
+            "default": "Modifier"
+          },
+          {
+            "name": "text",
+            "type": "String",
+            "required": true,
+            "figma": "text"
+          },
+          {
+            "name": "onClick",
+            "type": "() -> Unit",
+            "required": true
+          },
+          {
+            "name": "enabled",
+            "type": "Boolean",
+            "required": false,
+            "default": "true"
+          }
+        ],
+        "tokens": {
+          "radius": {
+            "token": "md.sys.shape.medium",
+            "value": "8px"
+          },
+          "paddingHorizontal": {
+            "token": "spacing.l",
+            "value": "16px",
+            "origin": "literal"
+          },
+          "typography": {
+            "token": "md.sys.typescale.labelLarge",
+            "value": "Inter 14px/1.43 500, трекинг 0.1px"
+          },
+          "color.light.default.container": {
+            "token": "md.sys.light.primary",
+            "value": "#7168E8",
+            "origin": "default"
+          },
+          "color.light.default.content": {
+            "token": "md.sys.light.onPrimary",
+            "value": "#F3EEFF",
+            "origin": "default"
+          },
+          "color.light.disabled.container": {
+            "token": "md.sys.light.onSurface",
+            "value": "#1C1B1F",
+            "origin": "default"
+          },
+          "color.light.disabled.content": {
+            "token": "md.sys.light.onSurface",
+            "value": "#1C1B1F",
+            "origin": "default"
+          },
+          "color.dark.default.container": {
+            "token": "md.sys.dark.primary",
+            "value": "#7168E8",
+            "origin": "default"
+          },
+          "color.dark.default.content": {
+            "token": "md.sys.dark.onPrimary",
+            "value": "#F3EEFF",
+            "origin": "default"
+          },
+          "color.dark.disabled.container": {
+            "token": "md.sys.dark.onSurface",
+            "value": "#FFFFFF",
+            "origin": "default"
+          },
+          "color.dark.disabled.content": {
+            "token": "md.sys.dark.onSurface",
+            "value": "#FFFFFF",
+            "origin": "default"
+          }
+        }
+      },
+      {
+        "component": "CommonOutlinedButton",
+        "level": "styled",
+        "levelChecked": true,
+        "base": [
+          "OutlinedButton"
+        ],
+        "implements": {
+          "style": "outlined"
+        },
+        "source": {
+          "file": "trassir-uikit/src/commonMain/kotlin/com/uilibrary/ui/common/CommonOutlinedButton.kt",
+          "line": 17
+        },
+        "props": [
+          {
+            "name": "text",
+            "type": "String",
+            "required": true,
+            "figma": "text"
+          },
+          {
+            "name": "onClick",
+            "type": "() -> Unit",
+            "required": true
+          },
+          {
+            "name": "modifier",
+            "type": "Modifier",
+            "required": false,
+            "default": "Modifier"
+          },
+          {
+            "name": "enabled",
+            "type": "Boolean",
+            "required": false,
+            "default": "true"
+          }
+        ],
+        "tokens": {
+          "radius": {
+            "token": "md.sys.shape.extraLarge",
+            "value": "28px"
+          },
+          "typography": {
+            "token": "md.sys.typescale.labelLarge",
+            "value": "Inter 14px/1.43 500, трекинг 0.1px"
+          },
+          "color.light.default.border": {
+            "token": "md.sys.light.primary",
+            "value": "#7168E8"
+          },
+          "color.light.default.content": {
+            "token": "md.sys.light.primary",
+            "value": "#7168E8",
+            "origin": "default"
+          },
+          "color.light.disabled.border": {
+            "token": "md.sys.light.primary",
+            "value": "#7168E8"
+          },
+          "color.light.disabled.content": {
+            "token": "md.sys.light.onSurface",
+            "value": "#1C1B1F",
+            "origin": "default"
+          },
+          "color.dark.default.border": {
+            "token": "md.sys.dark.primary",
+            "value": "#7168E8"
+          },
+          "color.dark.default.content": {
+            "token": "md.sys.dark.primary",
+            "value": "#7168E8",
+            "origin": "default"
+          },
+          "color.dark.disabled.border": {
+            "token": "md.sys.dark.primary",
+            "value": "#7168E8"
+          },
+          "color.dark.disabled.content": {
+            "token": "md.sys.dark.onSurface",
+            "value": "#FFFFFF",
+            "origin": "default"
+          }
+        }
+      },
+      {
+        "component": "CommonTextButton",
+        "level": "styled",
+        "levelChecked": true,
+        "base": [
+          "TextButton"
+        ],
+        "implements": {
+          "style": "text"
+        },
+        "source": {
+          "file": "trassir-uikit/src/commonMain/kotlin/com/uilibrary/ui/common/CommonTextButton.kt",
+          "line": 18
+        },
+        "props": [
+          {
+            "name": "text",
+            "type": "String",
+            "required": true,
+            "figma": "text"
+          },
+          {
+            "name": "onClick",
+            "type": "() -> Unit",
+            "required": true
+          },
+          {
+            "name": "modifier",
+            "type": "Modifier",
+            "required": false,
+            "default": "Modifier"
+          },
+          {
+            "name": "enabled",
+            "type": "Boolean",
+            "required": false,
+            "default": "true"
+          },
+          {
+            "name": "textColor",
+            "type": "Color",
+            "required": false,
+            "default": "Color.Unspecified"
+          }
+        ],
+        "tokens": {
+          "minHeight": {
+            "token": "size.44",
+            "value": "44px",
+            "origin": "literal"
+          },
+          "radius": {
+            "token": "md.sys.shape.medium",
+            "value": "8px"
+          },
+          "typography": {
+            "token": "md.sys.typescale.labelLarge",
+            "value": "Inter 14px/1.43 500, трекинг 0.1px"
+          },
+          "color.light.default.content": {
+            "token": "md.sys.light.primary",
+            "value": "#7168E8",
+            "origin": "default"
+          },
+          "color.light.disabled.content": {
+            "token": "md.sys.light.onSurface",
+            "value": "#1C1B1F",
+            "origin": "default"
+          },
+          "color.dark.default.content": {
+            "token": "md.sys.dark.primary",
+            "value": "#7168E8",
+            "origin": "default"
+          },
+          "color.dark.disabled.content": {
+            "token": "md.sys.dark.onSurface",
+            "value": "#FFFFFF",
+            "origin": "default"
+          }
+        }
+      },
+      {
+        "component": "DestructiveTextButton",
+        "level": "styled",
+        "levelChecked": true,
+        "base": [
+          "CommonTextButton → TextButton"
+        ],
+        "implements": {
+          "style": "destructive"
+        },
+        "source": {
+          "file": "trassir-uikit/src/commonMain/kotlin/com/uilibrary/ui/common/CommonTextButton.kt",
+          "line": 40
+        },
+        "props": [
+          {
+            "name": "text",
+            "type": "String",
+            "required": true,
+            "figma": "text"
+          },
+          {
+            "name": "onClick",
+            "type": "() -> Unit",
+            "required": true
+          },
+          {
+            "name": "modifier",
+            "type": "Modifier",
+            "required": false,
+            "default": "Modifier"
+          },
+          {
+            "name": "enabled",
+            "type": "Boolean",
+            "required": false,
+            "default": "true"
+          }
+        ],
+        "tokens": {
+          "minHeight": {
+            "token": "size.44",
+            "value": "44px",
+            "origin": "literal"
+          },
+          "radius": {
+            "token": "md.sys.shape.medium",
+            "value": "8px"
+          },
+          "typography": {
+            "token": "md.sys.typescale.labelLarge",
+            "value": "Inter 14px/1.43 500, трекинг 0.1px"
+          },
+          "color.light.default.content": {
+            "token": "md.sys.light.error",
+            "value": "#D63E3E"
+          },
+          "color.light.disabled.content": {
+            "token": "md.sys.light.error",
+            "value": "#D63E3E"
+          },
+          "color.dark.default.content": {
+            "token": "md.sys.dark.error",
+            "value": "#FFB4AB"
+          },
+          "color.dark.disabled.content": {
+            "token": "md.sys.dark.error",
+            "value": "#FFB4AB"
+          }
+        }
+      },
+      {
+        "component": "SecondaryButton",
+        "level": "styled",
+        "levelChecked": true,
+        "base": [
+          "ActionButton → Button"
+        ],
+        "implements": {
+          "style": "secondary"
+        },
+        "source": {
+          "file": "trassir-uikit/src/commonMain/kotlin/com/uilibrary/ui/common/ActionButton.kt",
+          "line": 64
+        },
+        "props": [
+          {
+            "name": "text",
+            "type": "String",
+            "required": true,
+            "figma": "text"
+          },
+          {
+            "name": "onClick",
+            "type": "() -> Unit",
+            "required": true
+          },
+          {
+            "name": "modifier",
+            "type": "Modifier",
+            "required": false,
+            "default": "Modifier"
+          },
+          {
+            "name": "textColor",
+            "type": "Color",
+            "required": false,
+            "default": "Color.Unspecified"
+          },
+          {
+            "name": "shape",
+            "type": "Shape",
+            "required": false,
+            "default": "RoundedCornerShape(10.dp)"
+          },
+          {
+            "name": "enabled",
+            "type": "Boolean",
+            "required": false,
+            "default": "true"
+          }
+        ],
+        "tokens": {
+          "minHeight": {
+            "token": "size.44",
+            "value": "44px",
+            "origin": "literal"
+          },
+          "radius": {
+            "token": "radius.10",
+            "value": "10px",
+            "origin": "literal"
+          },
+          "paddingHorizontal": {
+            "token": "spacing.m",
+            "value": "12px",
+            "origin": "literal"
+          },
+          "paddingVertical": {
+            "token": "spacing.s",
+            "value": "8px",
+            "origin": "literal"
+          },
+          "typography": {
+            "token": "md.sys.typescale.labelLarge",
+            "value": "Inter 14px/1.43 500, трекинг 0.1px"
+          },
+          "color.light.default.container": {
+            "token": "md.sys.light.secondary",
+            "value": "#6750A4"
+          },
+          "color.light.default.content": {
+            "token": "md.sys.light.onPrimary",
+            "value": "#F3EEFF",
+            "origin": "default"
+          },
+          "color.light.disabled.container": {
+            "token": "md.sys.light.onSurface",
+            "value": "#1C1B1F",
+            "origin": "default"
+          },
+          "color.light.disabled.content": {
+            "token": "md.sys.light.onSurface",
+            "value": "#1C1B1F",
+            "origin": "default"
+          },
+          "color.dark.default.container": {
+            "token": "md.sys.dark.secondary",
+            "value": "#3E3E41"
+          },
+          "color.dark.default.content": {
+            "token": "md.sys.dark.onPrimary",
+            "value": "#F3EEFF",
+            "origin": "default"
+          },
+          "color.dark.disabled.container": {
+            "token": "md.sys.dark.onSurface",
+            "value": "#FFFFFF",
+            "origin": "default"
+          },
+          "color.dark.disabled.content": {
+            "token": "md.sys.dark.onSurface",
+            "value": "#FFFFFF",
+            "origin": "default"
+          }
+        }
+      }
+    ],
+    "ios": [
+      {
+        "component": "ChevronButton",
+        "level": "styled",
+        "levelChecked": false,
+        "base": [
+          "Button"
+        ],
+        "implements": null,
+        "source": {
+          "file": "iosApp/TrassirUIKit/Sources/TrassirUIKit/TrPageView.swift",
+          "line": 80
+        },
+        "props": [
+          {
+            "name": "style",
+            "type": "ChevronButtonStyle",
+            "required": true
+          },
+          {
+            "name": "scaleEffect",
+            "type": "CGFloat",
+            "required": false,
+            "default": "1.5"
+          },
+          {
+            "name": "action",
+            "type": "@escaping () -> Void",
+            "required": true
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "ProgressButton",
+        "level": "styled",
+        "levelChecked": true,
+        "base": [
+          "Button"
+        ],
+        "implements": {
+          "style": "primary",
+          "state": "loading"
+        },
+        "source": {
+          "file": "iosApp/TrassirUIKit/Sources/TrassirUIKit/TrButton.swift",
+          "line": 168
+        },
+        "props": [
+          {
+            "name": "text",
+            "type": "String",
+            "required": true,
+            "figma": "text"
+          },
+          {
+            "name": "cornerRadius",
+            "type": "CGFloat",
+            "required": false,
+            "default": "ModuleConstants.Visual.cornerRadiusNewDesign"
+          },
+          {
+            "name": "isEnabled",
+            "type": "Bool",
+            "required": true
+          },
+          {
+            "name": "inProgress",
+            "type": "Bool",
+            "required": true
+          },
+          {
+            "name": "action",
+            "type": "@escaping () async -> Void",
+            "required": true
+          }
+        ],
+        "tokens": {
+          "height": {
+            "token": "tr.size.buttonHeightNewDesign",
+            "value": "44px"
+          },
+          "radius": {
+            "token": "tr.radius.cornerRadiusNewDesign",
+            "value": "10px"
+          },
+          "typography": {
+            "token": "tr.typography.body5",
+            "value": "SF Pro 14px 500"
+          },
+          "color.default.container": {
+            "token": "tr.color.primary",
+            "value": "#7367F0"
+          },
+          "color.default.content": {
+            "token": "tr.color.grayscale100",
+            "value": "#FFFFFF"
+          },
+          "color.disabled.container": {
+            "token": "tr.color.grayscale700",
+            "value": "#3D3D3D"
+          },
+          "color.disabled.content": {
+            "token": "tr.color.grayscale600",
+            "value": "#969696"
+          }
+        }
+      },
+      {
+        "component": "TrButton",
+        "level": "styled",
+        "levelChecked": true,
+        "base": [
+          "Button"
+        ],
+        "implements": {
+          "style": [
+            "primary",
+            "secondary",
+            "outlined",
+            "destructive",
+            "white"
+          ]
+        },
+        "source": {
+          "file": "iosApp/TrassirUIKit/Sources/TrassirUIKit/TrButton.swift",
+          "line": 10
+        },
+        "props": [
+          {
+            "name": "title",
+            "type": "String",
+            "required": true,
+            "figma": "text"
+          },
+          {
+            "name": "width",
+            "type": "CGFloat",
+            "required": false,
+            "default": ".infinity"
+          },
+          {
+            "name": "height",
+            "type": "CGFloat",
+            "required": false,
+            "default": "ModuleConstants.Visual.buttonHeightNewDesign"
+          },
+          {
+            "name": "style",
+            "type": "TrButton.Style",
+            "required": true,
+            "figma": "style"
+          },
+          {
+            "name": "typographyStyle",
+            "type": "TrTypography.Style",
+            "required": false,
+            "default": ".ndButton"
+          },
+          {
+            "name": "cornerRadius",
+            "type": "CGFloat",
+            "required": false,
+            "default": "ModuleConstants.Visual.cornerRadiusNewDesign"
+          },
+          {
+            "name": "disabled",
+            "type": "Bool",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "titleColor",
+            "type": "Color?",
+            "required": false,
+            "default": "nil"
+          },
+          {
+            "name": "action",
+            "type": "@escaping () async -> Void",
+            "required": true
+          }
+        ],
+        "tokens": {
+          "height": {
+            "token": "tr.size.buttonHeightNewDesign",
+            "value": "44px"
+          },
+          "radius": {
+            "token": "tr.radius.cornerRadiusNewDesign",
+            "value": "10px"
+          },
+          "typography": {
+            "token": "tr.typography.ndButton",
+            "value": "SF Pro 14px 500"
+          },
+          "variant.primary.color.default.container": {
+            "token": "tr.color.primary",
+            "value": "#7367F0"
+          },
+          "variant.primary.color.default.content": {
+            "token": "tr.color.grayscale100",
+            "value": "#FFFFFF"
+          },
+          "variant.primary.color.disabled.container": {
+            "token": "tr.color.grayscale700",
+            "value": "#3D3D3D"
+          },
+          "variant.primary.color.disabled.content": {
+            "token": "tr.color.grayscale600",
+            "value": "#969696"
+          },
+          "variant.secondary.color.default.container": {
+            "token": "tr.color.grayscale700",
+            "value": "#3D3D3D"
+          },
+          "variant.secondary.color.default.content": {
+            "token": "tr.color.grayscale100",
+            "value": "#FFFFFF"
+          },
+          "variant.destructive.color.default.container": {
+            "token": "tr.color.additionalError",
+            "value": "#EA0F0F"
+          },
+          "variant.destructive.color.default.content": {
+            "token": "tr.color.grayscale100",
+            "value": "#FFFFFF"
+          },
+          "variant.destructive.color.disabled.container": {
+            "token": "tr.color.grayscale700",
+            "value": "#3D3D3D"
+          },
+          "variant.destructive.color.disabled.content": {
+            "token": "tr.color.grayscale600",
+            "value": "#969696"
+          },
+          "variant.white.color.default.container": {
+            "token": "tr.color.grayscale100",
+            "value": "#FFFFFF"
+          },
+          "variant.white.color.default.content": {
+            "token": "tr.color.grayscale900",
+            "value": "#151515"
+          },
+          "variant.white.color.disabled.container": {
+            "token": "tr.color.grayscale700",
+            "value": "#3D3D3D"
+          },
+          "variant.white.color.disabled.content": {
+            "token": "tr.color.grayscale600",
+            "value": "#969696"
+          },
+          "variant.outlined.radius": {
+            "token": "tr.radius.cornerRadiusSmall",
+            "value": "8px"
+          },
+          "variant.outlined.padding": {
+            "token": "tr.spacing.mediumPadding",
+            "value": "12px",
+            "origin": "literal"
+          },
+          "variant.outlined.typography": {
+            "token": "tr.typography.caption1",
+            "value": "SF Pro 12px 500"
+          },
+          "variant.outlined.color.default.border": {
+            "token": "tr.color.grayscale100",
+            "value": "#FFFFFF"
+          },
+          "variant.outlined.color.default.content": {
+            "token": "tr.color.grayscale100",
+            "value": "#FFFFFF"
+          }
+        }
+      },
+      {
+        "component": "TrButtonIcon",
+        "level": "styled",
+        "levelChecked": false,
+        "base": [
+          "Button"
+        ],
+        "implements": null,
+        "source": {
+          "file": "iosApp/TrassirUIKit/Sources/TrassirUIKit/TrButtonIcon.swift",
+          "line": 10
+        },
+        "props": [
+          {
+            "name": "icon",
+            "type": "Image",
+            "required": true
+          },
+          {
+            "name": "color",
+            "type": "Color",
+            "required": false,
+            "default": "TrColor.primary"
+          },
+          {
+            "name": "action",
+            "type": "@escaping () -> Void",
+            "required": true
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "TrButtonsTwo",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [],
+        "implements": null,
+        "source": {
+          "file": "iosApp/TrassirUIKit/Sources/TrassirUIKit/TrButton.swift",
+          "line": 226
+        },
+        "props": [
+          {
+            "name": "primaryTitle",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "secondaryTitle",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "buttonHeight",
+            "type": "CGFloat",
+            "required": false,
+            "default": "ModuleConstants.Visual.buttonHeightNewDesign"
+          },
+          {
+            "name": "style",
+            "type": "TwoButtonStyle",
+            "required": false,
+            "default": ".primarySecondary"
+          },
+          {
+            "name": "buttonPosition",
+            "type": "Position",
+            "required": false,
+            "default": ".vertical"
+          },
+          {
+            "name": "primaryAction",
+            "type": "@escaping () async -> Void",
+            "required": true
+          },
+          {
+            "name": "secondaryAction",
+            "type": "@escaping () async -> Void",
+            "required": true
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "TrNavigationBarButton",
+        "level": "styled",
+        "levelChecked": false,
+        "base": [
+          "Button"
+        ],
+        "implements": null,
+        "source": {
+          "file": "iosApp/TrassirUIKit/Sources/TrassirUIKit/TrNavigationBarButton.swift",
+          "line": 10
+        },
+        "props": [
+          {
+            "name": "image",
+            "type": "Image",
+            "required": true
+          },
+          {
+            "name": "testID",
+            "type": "String",
+            "required": false,
+            "default": "\"\""
+          },
+          {
+            "name": "style",
+            "type": "TrNavigationBarButtonStyle",
+            "required": false,
+            "default": ".withCardBackground"
+          },
+          {
+            "name": "action",
+            "type": "@escaping () -> Void",
+            "required": true
+          }
+        ],
+        "tokens": {}
+      }
+    ]
+  },
+  "tokenIndex": {
+    "md.sys.dark.error": {
+      "type": "color",
+      "value": "#FFB4AB",
+      "status": "conflict",
+      "code": {
+        "compose": "TrassirTokens.Md.Sys.Dark.error"
+      }
+    },
+    "md.sys.dark.onPrimary": {
+      "type": "color",
+      "value": "#F3EEFF",
+      "status": "stable",
+      "code": {
+        "compose": "TrassirTokens.Md.Sys.Dark.onPrimary"
+      }
+    },
+    "md.sys.dark.onSurface": {
+      "type": "color",
+      "value": "#FFFFFF",
+      "status": "stable",
+      "code": {
+        "compose": "TrassirTokens.Md.Sys.Dark.onSurface"
+      }
+    },
+    "md.sys.dark.primary": {
+      "type": "color",
+      "value": "#7168E8",
+      "status": "conflict",
+      "code": {
+        "compose": "TrassirTokens.Md.Sys.Dark.primary"
+      }
+    },
+    "md.sys.dark.secondary": {
+      "type": "color",
+      "value": "#3E3E41",
+      "status": "stable",
+      "code": {
+        "compose": "TrassirTokens.Md.Sys.Dark.secondary"
+      }
+    },
+    "md.sys.light.error": {
+      "type": "color",
+      "value": "#D63E3E",
+      "status": "conflict",
+      "code": {
+        "compose": "TrassirTokens.Md.Sys.Light.error"
+      }
+    },
+    "md.sys.light.onPrimary": {
+      "type": "color",
+      "value": "#F3EEFF",
+      "status": "stable",
+      "code": {
+        "compose": "TrassirTokens.Md.Sys.Light.onPrimary"
+      }
+    },
+    "md.sys.light.onSurface": {
+      "type": "color",
+      "value": "#1C1B1F",
+      "status": "stable",
+      "code": {
+        "compose": "TrassirTokens.Md.Sys.Light.onSurface"
+      }
+    },
+    "md.sys.light.primary": {
+      "type": "color",
+      "value": "#7168E8",
+      "status": "conflict",
+      "code": {
+        "compose": "TrassirTokens.Md.Sys.Light.primary"
+      }
+    },
+    "md.sys.light.secondary": {
+      "type": "color",
+      "value": "#6750A4",
+      "status": "stable",
+      "code": {
+        "compose": "TrassirTokens.Md.Sys.Light.secondary"
+      }
+    },
+    "md.sys.shape.extraLarge": {
+      "type": "dimension",
+      "value": "28px",
+      "status": "stable",
+      "code": {
+        "compose": "TrassirTokens.Md.Sys.Shape.extraLarge"
+      }
+    },
+    "md.sys.shape.medium": {
+      "type": "dimension",
+      "value": "8px",
+      "status": "stable",
+      "code": {
+        "compose": "TrassirTokens.Md.Sys.Shape.medium"
+      }
+    },
+    "md.sys.typescale.labelLarge": {
+      "type": "typography",
+      "value": "Inter 14px/1.43 500, трекинг 0.1px",
+      "status": "stable",
+      "code": {
+        "compose": "TrassirTokens.Md.Sys.Typescale.labelLarge"
+      }
+    },
+    "radius.10": {
+      "type": "dimension",
+      "value": "10px",
+      "status": "stable"
+    },
+    "size.44": {
+      "type": "dimension",
+      "value": "44px",
+      "status": "stable"
+    },
+    "spacing.l": {
+      "type": "dimension",
+      "value": "16px",
+      "status": "stable",
+      "code": {
+        "compose": "TrassirTokens.Spacing.l",
+        "swiftui": "TrassirTokens.Spacing.l"
+      }
+    },
+    "spacing.m": {
+      "type": "dimension",
+      "value": "12px",
+      "status": "stable",
+      "code": {
+        "compose": "TrassirTokens.Spacing.m",
+        "swiftui": "TrassirTokens.Spacing.m"
+      }
+    },
+    "spacing.s": {
+      "type": "dimension",
+      "value": "8px",
+      "status": "stable",
+      "code": {
+        "compose": "TrassirTokens.Spacing.s",
+        "swiftui": "TrassirTokens.Spacing.s"
+      }
+    },
+    "tr.color.additionalError": {
+      "type": "color",
+      "value": "#EA0F0F",
+      "status": "conflict",
+      "code": {
+        "swiftui": "TrassirTokens.Tr.Color.additionalError"
+      }
+    },
+    "tr.color.grayscale100": {
+      "type": "color",
+      "value": "#FFFFFF",
+      "status": "stable",
+      "code": {
+        "swiftui": "TrassirTokens.Tr.Color.grayscale100"
+      }
+    },
+    "tr.color.grayscale600": {
+      "type": "color",
+      "value": "#969696",
+      "status": "conflict",
+      "code": {
+        "swiftui": "TrassirTokens.Tr.Color.grayscale600"
+      }
+    },
+    "tr.color.grayscale700": {
+      "type": "color",
+      "value": "#3D3D3D",
+      "status": "stable",
+      "code": {
+        "swiftui": "TrassirTokens.Tr.Color.grayscale700"
+      }
+    },
+    "tr.color.grayscale900": {
+      "type": "color",
+      "value": "#151515",
+      "status": "stable",
+      "code": {
+        "swiftui": "TrassirTokens.Tr.Color.grayscale900"
+      }
+    },
+    "tr.color.primary": {
+      "type": "color",
+      "value": "#7367F0",
+      "status": "conflict",
+      "code": {
+        "swiftui": "TrassirTokens.Tr.Color.primary"
+      }
+    },
+    "tr.radius.cornerRadiusNewDesign": {
+      "type": "dimension",
+      "value": "10px",
+      "status": "stable",
+      "code": {
+        "swiftui": "TrassirTokens.Tr.Radius.cornerRadiusNewDesign"
+      }
+    },
+    "tr.radius.cornerRadiusSmall": {
+      "type": "dimension",
+      "value": "8px",
+      "status": "stable",
+      "code": {
+        "swiftui": "TrassirTokens.Tr.Radius.cornerRadiusSmall"
+      }
+    },
+    "tr.size.buttonHeightNewDesign": {
+      "type": "dimension",
+      "value": "44px",
+      "status": "stable",
+      "code": {
+        "swiftui": "TrassirTokens.Tr.Size.buttonHeightNewDesign"
+      }
+    },
+    "tr.spacing.mediumPadding": {
+      "type": "dimension",
+      "value": "12px",
+      "status": "stable",
+      "code": {
+        "swiftui": "TrassirTokens.Tr.Spacing.mediumPadding"
+      }
+    },
+    "tr.typography.body5": {
+      "type": "typography",
+      "value": "SF Pro 14px 500",
+      "status": "stable",
+      "code": {
+        "swiftui": "TrassirTokens.Tr.Typography.body5"
+      }
+    },
+    "tr.typography.caption1": {
+      "type": "typography",
+      "value": "SF Pro 12px 500",
+      "status": "stable",
+      "code": {
+        "swiftui": "TrassirTokens.Tr.Typography.caption1"
+      }
+    },
+    "tr.typography.ndButton": {
+      "type": "typography",
+      "value": "SF Pro 14px 500",
+      "status": "stable",
+      "code": {
+        "swiftui": "TrassirTokens.Tr.Typography.ndButton"
+      }
+    }
+  },
+  "warnings": [
+    {
+      "platform": "android",
+      "component": "ActionButton",
+      "param": "iconSize",
+      "value": "16px",
+      "code": "Modifier.size(16.dp)",
+      "line": 49,
+      "message": "значение не привязано к токену"
+    },
+    {
+      "platform": "android",
+      "component": "ActionButton",
+      "param": "iconSpacing",
+      "value": "8px",
+      "code": "ButtonDefaults.IconSpacing",
+      "line": 54,
+      "note": "константа Material 3, совпадает со spacing.s",
+      "message": "значение не привязано к токену"
+    },
+    {
+      "platform": "android",
+      "component": "ActionButton",
+      "param": "disabledContainerOpacity",
+      "value": "0.12",
+      "code": "ButtonDefaults.buttonColors()",
+      "note": "из Material 3 по умолчанию",
+      "message": "значение не привязано к токену"
+    },
+    {
+      "platform": "android",
+      "component": "ActionButton",
+      "param": "disabledContentOpacity",
+      "value": "0.38",
+      "code": "ButtonDefaults.buttonColors()",
+      "note": "из Material 3 по умолчанию",
+      "message": "значение не привязано к токену"
+    },
+    {
+      "platform": "android",
+      "component": "ActionButton",
+      "param": "pressed",
+      "value": "ripple",
+      "code": "Button",
+      "note": "нажатие — ripple Material 3, цвета состояния в коде нет",
+      "message": "значение не привязано к токену"
+    },
+    {
+      "platform": "android",
+      "component": "CommonFilledButton",
+      "param": "minHeight",
+      "value": "40px",
+      "code": "Button",
+      "line": 23,
+      "note": "высота в коде не задана, берётся ButtonDefaults.MinHeight из Material 3",
+      "message": "значение не привязано к токену"
+    },
+    {
+      "platform": "android",
+      "component": "CommonOutlinedButton",
+      "param": "borderWidth",
+      "value": "1px",
+      "code": "BorderStroke(1.dp, ...)",
+      "line": 27,
+      "message": "значение не привязано к токену"
+    },
+    {
+      "platform": "android",
+      "component": "CommonOutlinedButton",
+      "param": "minHeight",
+      "value": "40px",
+      "code": "OutlinedButton",
+      "line": 23,
+      "note": "высота в коде не задана, берётся из Material 3",
+      "message": "значение не привязано к токену"
+    },
+    {
+      "platform": "ios",
+      "component": "ProgressButton",
+      "param": "spinnerSize",
+      "value": "17px",
+      "code": "CircularActivityIndicatory(color: TrColor.grayscale100, size: 17)",
+      "line": 196,
+      "message": "значение не привязано к токену"
+    },
+    {
+      "platform": "ios",
+      "component": "TrButton",
+      "param": "outlined.borderWidth",
+      "value": "1px",
+      "code": ".stroke(TrColor.grayscale100, lineWidth: 1)",
+      "line": 98,
+      "message": "значение не привязано к токену"
+    },
+    {
+      "platform": "ios",
+      "component": "TrButton",
+      "param": "outlined.containerOpacity",
+      "value": "0.1",
+      "code": "TrColor.grayscale100.opacity(0.1)",
+      "line": 100,
+      "note": "подложка outlined — grayscale100 с прозрачностью 10 %",
+      "message": "значение не привязано к токену"
+    },
+    {
+      "platform": "ios",
+      "component": "TrButton",
+      "param": "pressed",
+      "value": "нет",
+      "code": ".buttonStyle(.plain)",
+      "line": 114,
+      "note": "нажатие визуально не отмечено",
+      "message": "значение не привязано к токену"
+    }
+  ],
+  "deviations": [
+    {
+      "platform": "both",
+      "what": "Главный цвет",
+      "design": null,
+      "android": "#7168E8",
+      "ios": "#7367F0",
+      "kind": "conflict",
+      "issue": "DSM-11",
+      "note": "Открытый конфликт primary: значения не сведены"
+    },
+    {
+      "platform": "android",
+      "what": "Нажатие",
+      "design": "заливка темнеет до #5C54C5 (прототип)",
+      "android": "ripple Material 3",
+      "kind": "review"
+    },
+    {
+      "platform": "ios",
+      "what": "Нажатие",
+      "design": "заливка темнеет до #5C54C5 (прототип)",
+      "ios": "не отмечено: .buttonStyle(.plain)",
+      "kind": "review"
+    },
+    {
+      "platform": "both",
+      "what": "Destructive",
+      "android": "текстовая красная кнопка",
+      "ios": "заливка additionalError",
+      "kind": "review"
+    },
+    {
+      "platform": "android",
+      "what": "Загрузка",
+      "android": "в кнопку не встроена, экраны собирают сами",
+      "ios": "ProgressButton",
+      "kind": "review"
+    },
+    {
+      "platform": "android",
+      "what": "Высота filled и outlined",
+      "android": "40 — по умолчанию Material 3",
+      "ios": "44",
+      "kind": "review",
+      "note": "ActionButton на Android — 44"
+    },
+    {
+      "platform": "android",
+      "what": "Disabled",
+      "android": "onSurface с прозрачностью 12 % и 38 % из Material 3",
+      "ios": "grayscale700 и grayscale600",
+      "kind": "review"
+    },
+    {
+      "platform": "android",
+      "what": "Два primary",
+      "android": "ActionButton 44 / радиус 10 и CommonFilledButton 40 / радиус 8",
+      "ios": "один TrButton 44 / 10",
+      "kind": "review",
+      "note": "В Figma primary нарисован по ActionButton: у него все размеры заданы явно"
+    },
+    {
+      "platform": "both",
+      "what": "Pressed в Figma",
+      "design": null,
+      "android": "ripple, цвета в коде нет",
+      "ios": "не отмечено",
+      "kind": "review",
+      "note": "Состояние pressed в Figma не нарисовано: в коде нет значений, придумывать нельзя"
+    },
+    {
+      "platform": "ios",
+      "what": "Шрифт ProgressButton",
+      "design": "ndButton",
+      "ios": "body5",
+      "kind": "review"
+    }
+  ]
+}

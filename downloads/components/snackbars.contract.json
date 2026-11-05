@@ -1,0 +1,85 @@
+{
+  "$schema": "trassir-mobile-contract/1",
+  "id": "snackbars",
+  "component": "Снекбары",
+  "version": "0.1.0",
+  "generated": "2026-10-22T16:12:15+03:00",
+  "description": "Сообщение о том, что уже случилось. Реакции не требует, интерфейс не блокирует.",
+  "level": "styled",
+  "filled": false,
+  "figma": null,
+  "api": {
+    "variants": [],
+    "props": []
+  },
+  "states": [
+    "default",
+    "pressed",
+    "disabled",
+    "loading"
+  ],
+  "anatomy": [],
+  "platforms": {
+    "android": [
+      {
+        "component": "NotificationMessage",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [],
+        "implements": null,
+        "source": {
+          "file": "trassir-uikit/src/main/java/com/uilibrary/ui/common/NotificationMessage.kt",
+          "line": 23
+        },
+        "props": [
+          {
+            "name": "description",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "buttonText",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "modifier",
+            "type": "Modifier",
+            "required": false,
+            "default": "Modifier"
+          },
+          {
+            "name": "onClick",
+            "type": "() -> Unit",
+            "required": true
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "StyledSnackbar",
+        "level": "styled",
+        "levelChecked": false,
+        "base": [
+          "Snackbar"
+        ],
+        "implements": null,
+        "source": {
+          "file": "trassir-uikit/src/commonMain/kotlin/com/uilibrary/core/snackbar/style/StyledSnackbar.kt",
+          "line": 15
+        },
+        "props": [
+          {
+            "name": "snackbarData",
+            "type": "SnackbarData",
+            "required": true
+          }
+        ],
+        "tokens": {}
+      }
+    ]
+  },
+  "tokenIndex": {},
+  "warnings": [],
+  "deviations": []
+}

@@ -1,0 +1,79 @@
+{
+  "$schema": "trassir-mobile-contract/1",
+  "id": "nav-ios",
+  "component": "Навигация и шапка",
+  "version": "0.1.0",
+  "generated": "2026-10-22T16:12:15+03:00",
+  "description": "Шапка строится на нативной навигации: заголовок стилем ndNavTitle, действия слева и справа. Кнопка возврата окрашена в primary, а не в цвет текста.",
+  "level": "styled",
+  "filled": false,
+  "figma": null,
+  "api": {
+    "variants": [],
+    "props": []
+  },
+  "states": [
+    "default",
+    "pressed",
+    "disabled",
+    "loading"
+  ],
+  "anatomy": [],
+  "platforms": {
+    "ios": [
+      {
+        "component": "TrPageView",
+        "level": "styled",
+        "levelChecked": false,
+        "base": [
+          "TabView"
+        ],
+        "implements": null,
+        "source": {
+          "file": "iosApp/TrassirUIKit/Sources/TrassirUIKit/TrPageView.swift",
+          "line": 10
+        },
+        "props": [
+          {
+            "name": "pageIndex",
+            "type": "Int",
+            "required": false,
+            "default": "0"
+          },
+          {
+            "name": "items",
+            "type": "[T]",
+            "required": true
+          },
+          {
+            "name": "showButtons",
+            "type": "Bool",
+            "required": false,
+            "default": "true"
+          },
+          {
+            "name": "indexDisplayMode",
+            "type": "PageTabViewStyle.IndexDisplayMode",
+            "required": false,
+            "default": ".automatic"
+          },
+          {
+            "name": "indexViewStyle",
+            "type": "PageIndexViewStyle.BackgroundDisplayMode",
+            "required": false,
+            "default": ".automatic"
+          },
+          {
+            "name": "page",
+            "type": "@escaping (_ item: T) -> Content",
+            "required": true
+          }
+        ],
+        "tokens": {}
+      }
+    ]
+  },
+  "tokenIndex": {},
+  "warnings": [],
+  "deviations": []
+}

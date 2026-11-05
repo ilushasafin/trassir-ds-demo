@@ -1,0 +1,257 @@
+{
+  "$schema": "trassir-mobile-contract/1",
+  "id": "lists-ios",
+  "component": "Списки и ячейки",
+  "version": "0.1.0",
+  "generated": "2026-10-22T16:12:15+03:00",
+  "description": "Списки строятся на нативном `insetGrouped`: скруглённые группы с отступами от краёв. Фон строки grayscale800, разделитель grayscale700, высота ячейки 40.",
+  "level": "styled",
+  "filled": false,
+  "figma": null,
+  "api": {
+    "variants": [],
+    "props": []
+  },
+  "states": [
+    "default",
+    "pressed",
+    "disabled",
+    "loading"
+  ],
+  "anatomy": [],
+  "platforms": {
+    "ios": [
+      {
+        "component": "StackCamerasInsideView",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [
+          "Button"
+        ],
+        "implements": null,
+        "source": {
+          "file": "iosApp/TrassirUIKit/Sources/TrassirUIKit/StackCamerasInsideView.swift",
+          "line": 10
+        },
+        "props": [
+          {
+            "name": "channelList",
+            "type": "[(channelGUID: String, channelName: String, channelStub: Content)]",
+            "required": true
+          },
+          {
+            "name": "stackStyle",
+            "type": "CamerasStackStyle",
+            "required": true
+          },
+          {
+            "name": "selectedAction",
+            "type": "@escaping (String?) -> Void",
+            "required": true
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "StackCamerasMainView",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [
+          "Button"
+        ],
+        "implements": null,
+        "source": {
+          "file": "iosApp/TrassirUIKit/Sources/TrassirUIKit/StackCamerasMainView.swift",
+          "line": 14
+        },
+        "props": [
+          {
+            "name": "groupIcon",
+            "type": "Icon",
+            "required": true
+          },
+          {
+            "name": "groupTitle",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "groupSubtitle",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "channelList",
+            "type": "[(channelGUID: String, channelName: String, channelStub: Content)]",
+            "required": true
+          },
+          {
+            "name": "stackStyle",
+            "type": "CamerasStackStyle",
+            "required": false,
+            "default": ".fullList"
+          },
+          {
+            "name": "trailingContent",
+            "type": "@ViewBuilder () -> TrailingContent",
+            "required": true
+          },
+          {
+            "name": "selectedAction",
+            "type": "@escaping (String?) -> Void",
+            "required": true
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "TrInfoPlate",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [],
+        "implements": null,
+        "source": {
+          "file": "iosApp/TrassirUIKit/Sources/TrassirUIKit/TrInfoPlate.swift",
+          "line": 11
+        },
+        "props": [
+          {
+            "name": "title",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "value",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "cornerRadius",
+            "type": "CGFloat",
+            "required": false,
+            "default": "ModuleConstants.Visual.cornerRadiusStandard"
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "TrList",
+        "level": "styled",
+        "levelChecked": false,
+        "base": [
+          "List"
+        ],
+        "implements": null,
+        "source": {
+          "file": "iosApp/TrassirUIKit/Sources/TrassirUIKit/TrList.swift",
+          "line": 11
+        },
+        "props": [
+          {
+            "name": "items",
+            "type": "Binding<[T]>",
+            "required": true
+          },
+          {
+            "name": "cell",
+            "type": "@escaping (T) -> Content",
+            "required": true
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "TrListCellNavLinkContent",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [],
+        "implements": null,
+        "source": {
+          "file": "iosApp/TrassirUIKit/Sources/TrassirUIKit/TrListCellNavLinkContent.swift",
+          "line": 10
+        },
+        "props": [
+          {
+            "name": "withBadge",
+            "type": "BadgeType?",
+            "required": false,
+            "default": "nil"
+          },
+          {
+            "name": "height",
+            "type": "CGFloat",
+            "required": false,
+            "default": "ModuleConstants.Visual.listItemHeight"
+          },
+          {
+            "name": "arrowSize",
+            "type": "CGFloat",
+            "required": false,
+            "default": "18"
+          },
+          {
+            "name": "content",
+            "type": "@escaping () -> Content",
+            "required": true
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "TrPreviewCellView",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [],
+        "implements": null,
+        "source": {
+          "file": "iosApp/TrassirUIKit/Sources/TrassirUIKit/TrPreviewCellView.swift",
+          "line": 36
+        },
+        "props": [
+          {
+            "name": "title",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "subtitle",
+            "type": "(text: String, icon: Image)",
+            "required": true
+          },
+          {
+            "name": "thirdLine",
+            "type": "(text: String, icon: Image)?",
+            "required": true
+          },
+          {
+            "name": "badge",
+            "type": "AnyView?",
+            "required": false,
+            "default": "nil"
+          },
+          {
+            "name": "warningText",
+            "type": "String",
+            "required": false,
+            "default": "\"\""
+          },
+          {
+            "name": "sizeModel",
+            "type": "TrPreviewCellSizeModel",
+            "required": false,
+            "default": ".init()"
+          },
+          {
+            "name": "preview",
+            "type": "@escaping () -> Preview",
+            "required": true
+          }
+        ],
+        "tokens": {}
+      }
+    ]
+  },
+  "tokenIndex": {},
+  "warnings": [],
+  "deviations": []
+}

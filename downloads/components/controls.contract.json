@@ -1,0 +1,278 @@
+{
+  "$schema": "trassir-mobile-contract/1",
+  "id": "controls",
+  "component": "Переключатели, чипы и сегменты",
+  "version": "0.1.0",
+  "generated": "2026-10-22T16:12:15+03:00",
+  "description": "Выбор на iOS собран из 4 компонентов. Все они отличаются от Android и геометрией, и способом показать выбранное.",
+  "level": "styled",
+  "filled": false,
+  "figma": null,
+  "api": {
+    "variants": [],
+    "props": []
+  },
+  "states": [
+    "default",
+    "pressed",
+    "disabled",
+    "loading"
+  ],
+  "anatomy": [],
+  "platforms": {
+    "ios": [
+      {
+        "component": "PickerSegmentView",
+        "level": "styled",
+        "levelChecked": false,
+        "base": [
+          "Picker"
+        ],
+        "implements": null,
+        "source": {
+          "file": "iosApp/TrassirUIKit/Sources/TrassirUIKit/PickerSegmentView.swift",
+          "line": 10
+        },
+        "props": [
+          {
+            "name": "segmentData",
+            "type": "[(tag: String, localTitle: String, accessibilityID: String)]",
+            "required": true
+          },
+          {
+            "name": "selected",
+            "type": "Binding<String>",
+            "required": true
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "ToggleItemsView",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [
+          "Toggle"
+        ],
+        "implements": null,
+        "source": {
+          "file": "iosApp/TrassirUIKit/Sources/TrassirUIKit/ToggleItemsView.swift",
+          "line": 13
+        },
+        "props": [
+          {
+            "name": "items",
+            "type": "[ToggleItem]",
+            "required": true
+          },
+          {
+            "name": "allItemsSelected",
+            "type": "Binding<Bool>",
+            "required": true
+          },
+          {
+            "name": "selectAllTitle",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "spacing",
+            "type": "CGFloat",
+            "required": false,
+            "default": "24"
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "ToggleItemView",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [
+          "Toggle"
+        ],
+        "implements": null,
+        "source": {
+          "file": "iosApp/TrassirUIKit/Sources/TrassirUIKit/ToggleItemsView.swift",
+          "line": 105
+        },
+        "props": [
+          {
+            "name": "text",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "value",
+            "type": "Binding<Bool>",
+            "required": true
+          },
+          {
+            "name": "icon",
+            "type": "Image?",
+            "required": false,
+            "default": "nil"
+          },
+          {
+            "name": "enabled",
+            "type": "Bool",
+            "required": false,
+            "default": "true"
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "TrChipsView",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [],
+        "implements": null,
+        "source": {
+          "file": "iosApp/TrassirUIKit/Sources/TrassirUIKit/TrChipsView.swift",
+          "line": 43
+        },
+        "props": [
+          {
+            "name": "model",
+            "type": "@escaping () -> TrChipsViewModel<T>",
+            "required": true
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "TrDatePickerOptional",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [
+          "Button"
+        ],
+        "implements": null,
+        "source": {
+          "file": "iosApp/TrassirUIKit/Sources/TrassirUIKit/TrDatePickerOptional.swift",
+          "line": 11
+        },
+        "props": [
+          {
+            "name": "prompt",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "range",
+            "type": "any DatePickerRange<Date>",
+            "required": true
+          },
+          {
+            "name": "selection",
+            "type": "Binding<Date?>",
+            "required": true
+          },
+          {
+            "name": "startDate",
+            "type": "Date",
+            "required": false,
+            "default": "Date()"
+          },
+          {
+            "name": "width",
+            "type": "State<CGFloat>",
+            "required": true
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "TrRadioButtonList",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [
+          "Button"
+        ],
+        "implements": null,
+        "source": {
+          "file": "iosApp/TrassirUIKit/Sources/TrassirUIKit/TrRadioButtonList.swift",
+          "line": 10
+        },
+        "props": [
+          {
+            "name": "itemList",
+            "type": "[Item]",
+            "required": true
+          },
+          {
+            "name": "selected",
+            "type": "Binding<Item?>",
+            "required": true
+          },
+          {
+            "name": "scrollDisabled",
+            "type": "Bool",
+            "required": false,
+            "default": "true"
+          },
+          {
+            "name": "showDivider",
+            "type": "Bool",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "radioButtonIconSize",
+            "type": "CGFloat",
+            "required": false,
+            "default": "24"
+          },
+          {
+            "name": "showCardBackground",
+            "type": "Bool",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "itemContent",
+            "type": "@escaping (Item) -> Content",
+            "required": true
+          },
+          {
+            "name": "onSelectAction",
+            "type": "(() -> Void)?",
+            "required": false,
+            "default": "nil"
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "TrSegmentedControl",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [
+          "Button"
+        ],
+        "implements": null,
+        "source": {
+          "file": "iosApp/TrassirUIKit/Sources/TrassirUIKit/TrSegmentedControlView.swift",
+          "line": 16
+        },
+        "props": [
+          {
+            "name": "items",
+            "type": "[SegmentType]",
+            "required": true
+          },
+          {
+            "name": "selected",
+            "type": "Binding<SegmentType>",
+            "required": true
+          }
+        ],
+        "tokens": {}
+      }
+    ]
+  },
+  "tokenIndex": {},
+  "warnings": [],
+  "deviations": []
+}

@@ -1,0 +1,335 @@
+{
+  "$schema": "trassir-mobile-contract/1",
+  "id": "fields",
+  "component": "Поля ввода",
+  "version": "0.1.0",
+  "generated": "2026-10-22T16:12:15+03:00",
+  "description": "Поле с рамкой и подписью внутри. Подпись всегда видна и не исчезает при вводе.",
+  "level": "styled",
+  "filled": false,
+  "figma": null,
+  "api": {
+    "variants": [],
+    "props": []
+  },
+  "states": [
+    "default",
+    "pressed",
+    "disabled",
+    "loading"
+  ],
+  "anatomy": [],
+  "platforms": {
+    "android": [
+      {
+        "component": "EntropyProgressBar",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [
+          "LinearProgressIndicator"
+        ],
+        "implements": null,
+        "source": {
+          "file": "trassir-uikit/src/commonMain/kotlin/com/uilibrary/ui/common/EntropyProgressBar.kt",
+          "line": 21
+        },
+        "props": [
+          {
+            "name": "countEntropy",
+            "type": "Double",
+            "required": true
+          },
+          {
+            "name": "modifier",
+            "type": "Modifier",
+            "required": false,
+            "default": "Modifier"
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "OutlinedTextFieldValidate",
+        "level": "styled",
+        "levelChecked": false,
+        "base": [
+          "OutlinedTextField"
+        ],
+        "implements": null,
+        "source": {
+          "file": "trassir-uikit/src/commonMain/kotlin/com/uilibrary/ui/common/ValidateTextField.kt",
+          "line": 21
+        },
+        "props": [
+          {
+            "name": "valueText",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "onValueChange",
+            "type": "(String) -> Unit",
+            "required": true
+          },
+          {
+            "name": "isError",
+            "type": "Boolean",
+            "required": true
+          },
+          {
+            "name": "label",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "errorText",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "isEnabled",
+            "type": "Boolean",
+            "required": false,
+            "default": "true"
+          },
+          {
+            "name": "imeAction",
+            "type": "ImeAction",
+            "required": false,
+            "default": "ImeAction.Next"
+          },
+          {
+            "name": "keyboardType",
+            "type": "KeyboardType",
+            "required": false,
+            "default": "KeyboardType.Text"
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "OutlinePasswordInput",
+        "level": "styled",
+        "levelChecked": false,
+        "base": [
+          "IconButton",
+          "OutlinedTextField"
+        ],
+        "implements": null,
+        "source": {
+          "file": "trassir-uikit/src/commonMain/kotlin/com/uilibrary/ui/common/OutlnePasswordInput.kt",
+          "line": 39
+        },
+        "props": [
+          {
+            "name": "text",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "label",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "onTextChange",
+            "type": "(String) -> Unit",
+            "required": true
+          },
+          {
+            "name": "isPasswordVisible",
+            "type": "Boolean",
+            "required": true
+          },
+          {
+            "name": "changeShowPassword",
+            "type": "() -> Unit",
+            "required": true
+          },
+          {
+            "name": "modifier",
+            "type": "Modifier",
+            "required": false,
+            "default": "Modifier"
+          },
+          {
+            "name": "isError",
+            "type": "Boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "supportingText",
+            "type": "String",
+            "required": false,
+            "default": "\"\""
+          },
+          {
+            "name": "imeAction",
+            "type": "ImeAction",
+            "required": false,
+            "default": "ImeAction.Next"
+          },
+          {
+            "name": "keyboardType",
+            "type": "KeyboardType",
+            "required": false,
+            "default": "KeyboardType.Text"
+          },
+          {
+            "name": "showIconOk",
+            "type": "Boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "isRepeatField",
+            "type": "Boolean",
+            "required": false,
+            "default": "false"
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "OutlinePasswordInputWithoutEntropy",
+        "level": "styled",
+        "levelChecked": false,
+        "base": [
+          "IconButton",
+          "OutlinedTextField"
+        ],
+        "implements": null,
+        "source": {
+          "file": "trassir-uikit/src/commonMain/kotlin/com/uilibrary/ui/common/OutlnePasswordInput.kt",
+          "line": 117
+        },
+        "props": [
+          {
+            "name": "text",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "label",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "onTextChange",
+            "type": "(String) -> Unit",
+            "required": true
+          },
+          {
+            "name": "isPasswordVisible",
+            "type": "Boolean",
+            "required": true
+          },
+          {
+            "name": "changeShowPassword",
+            "type": "() -> Unit",
+            "required": true
+          },
+          {
+            "name": "modifier",
+            "type": "Modifier",
+            "required": false,
+            "default": "Modifier"
+          },
+          {
+            "name": "isError",
+            "type": "Boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "supportingText",
+            "type": "String",
+            "required": false,
+            "default": "\"\""
+          },
+          {
+            "name": "imeAction",
+            "type": "ImeAction",
+            "required": false,
+            "default": "ImeAction.Next"
+          },
+          {
+            "name": "keyboardType",
+            "type": "KeyboardType",
+            "required": false,
+            "default": "KeyboardType.Text"
+          },
+          {
+            "name": "showIconOk",
+            "type": "Boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "isRepeatField",
+            "type": "Boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "isEnabled",
+            "type": "Boolean",
+            "required": false,
+            "default": "true"
+          },
+          {
+            "name": "onDone",
+            "type": "(() -> Unit)?",
+            "required": false,
+            "default": "null"
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "WordInput",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [],
+        "implements": null,
+        "source": {
+          "file": "trassir-uikit/src/commonMain/kotlin/com/uilibrary/ui/common/WordInput.kt",
+          "line": 46
+        },
+        "props": [
+          {
+            "name": "text",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "label",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "onTextChange",
+            "type": "(String) -> Unit",
+            "required": true
+          },
+          {
+            "name": "submit",
+            "type": "() -> Unit",
+            "required": true
+          },
+          {
+            "name": "buttonSlot",
+            "type": "@Composable () -> Unit",
+            "required": false,
+            "default": "{}"
+          }
+        ],
+        "tokens": {}
+      }
+    ]
+  },
+  "tokenIndex": {},
+  "warnings": [],
+  "deviations": []
+}

@@ -1,0 +1,455 @@
+{
+  "$schema": "trassir-mobile-contract/1",
+  "id": "lists",
+  "component": "Списки и настройки",
+  "version": "0.1.0",
+  "generated": "2026-10-22T16:12:15+03:00",
+  "description": "Всё, что не видео, подаётся списком. Настройки, устройства, тарифы и пользователи.",
+  "level": "custom",
+  "filled": false,
+  "figma": null,
+  "api": {
+    "variants": [],
+    "props": []
+  },
+  "states": [
+    "default",
+    "pressed",
+    "disabled",
+    "loading"
+  ],
+  "anatomy": [],
+  "platforms": {
+    "android": [
+      {
+        "component": "MenuActionItem",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [],
+        "implements": null,
+        "source": {
+          "file": "trassir-uikit/src/commonMain/kotlin/com/uilibrary/ui/common/MenuActionItem.kt",
+          "line": 22
+        },
+        "props": [
+          {
+            "name": "modifier",
+            "type": "Modifier",
+            "required": false,
+            "default": "Modifier"
+          },
+          {
+            "name": "iconFirst",
+            "type": "ImageVector",
+            "required": true
+          },
+          {
+            "name": "name",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "iconSecond",
+            "type": "ImageVector",
+            "required": true
+          },
+          {
+            "name": "onClick",
+            "type": "() -> Unit",
+            "required": true
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "PropertyIconItem",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [],
+        "implements": null,
+        "source": {
+          "file": "trassir-uikit/src/commonMain/kotlin/com/uilibrary/ui/common/PropertyIconItem.kt",
+          "line": 38
+        },
+        "props": [
+          {
+            "name": "modifier",
+            "type": "Modifier",
+            "required": false,
+            "default": "Modifier"
+          },
+          {
+            "name": "name",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "value",
+            "type": "ImageVector",
+            "required": true
+          },
+          {
+            "name": "contentDescriptionItem",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "iconTintColor",
+            "type": "Color",
+            "required": false,
+            "default": "LocalContentColor.current"
+          },
+          {
+            "name": "locatorConnectionName",
+            "type": "String",
+            "required": false,
+            "default": "\"\""
+          },
+          {
+            "name": "locatorConnectionIcon",
+            "type": "String",
+            "required": false,
+            "default": "\"\""
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "PropertyTextItem",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [],
+        "implements": null,
+        "source": {
+          "file": "trassir-uikit/src/commonMain/kotlin/com/uilibrary/ui/common/PropertyTextItem.kt",
+          "line": 25
+        },
+        "props": [
+          {
+            "name": "modifier",
+            "type": "Modifier",
+            "required": false,
+            "default": "Modifier"
+          },
+          {
+            "name": "name",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "value",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "isError",
+            "type": "Boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "locatorName",
+            "type": "String",
+            "required": false,
+            "default": "\"\""
+          },
+          {
+            "name": "locatorValue",
+            "type": "String",
+            "required": false,
+            "default": "\"\""
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "SettingsHeader",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [],
+        "implements": null,
+        "source": {
+          "file": "trassir-uikit/src/commonMain/kotlin/com/uilibrary/ui/common/SettingsItem.kt",
+          "line": 196
+        },
+        "props": [
+          {
+            "name": "title",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "subtitle",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "buttonText",
+            "type": "String",
+            "required": false,
+            "default": "\"\""
+          },
+          {
+            "name": "backgroundColor",
+            "type": "Color",
+            "required": false,
+            "default": "MaterialTheme.colorScheme.surfaceTint"
+          },
+          {
+            "name": "isButtonEnabled",
+            "type": "Boolean",
+            "required": false,
+            "default": "true"
+          },
+          {
+            "name": "onButtonClick",
+            "type": "() -> Unit",
+            "required": false,
+            "default": "{}"
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "SettingsItem",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [],
+        "implements": null,
+        "source": {
+          "file": "trassir-uikit/src/commonMain/kotlin/com/uilibrary/ui/common/SettingsItem.kt",
+          "line": 131
+        },
+        "props": [
+          {
+            "name": "title",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "modifier",
+            "type": "Modifier",
+            "required": false,
+            "default": "Modifier"
+          },
+          {
+            "name": "subtitle",
+            "type": "String",
+            "required": false,
+            "default": "\"\""
+          },
+          {
+            "name": "icon",
+            "type": "ImageVector?",
+            "required": false,
+            "default": "null"
+          },
+          {
+            "name": "isShowArrayRight",
+            "type": "Boolean",
+            "required": false,
+            "default": "true"
+          },
+          {
+            "name": "isClickable",
+            "type": "Boolean",
+            "required": false,
+            "default": "true"
+          },
+          {
+            "name": "onClick",
+            "type": "() -> Unit",
+            "required": false,
+            "default": "{}"
+          },
+          {
+            "name": "content",
+            "type": "@Composable RowScope.() -> Unit",
+            "required": false,
+            "default": "{}"
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "SettingsItemWithCounter",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [],
+        "implements": null,
+        "source": {
+          "file": "trassir-uikit/src/commonMain/kotlin/com/uilibrary/ui/common/SettingsItem.kt",
+          "line": 42
+        },
+        "props": [
+          {
+            "name": "title",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "modifier",
+            "type": "Modifier",
+            "required": false,
+            "default": "Modifier"
+          },
+          {
+            "name": "onClick",
+            "type": "() -> Unit",
+            "required": false,
+            "default": "{}"
+          },
+          {
+            "name": "isShowArrayRight",
+            "type": "Boolean",
+            "required": false,
+            "default": "true"
+          },
+          {
+            "name": "icon",
+            "type": "ImageVector?",
+            "required": false,
+            "default": "null"
+          },
+          {
+            "name": "subtitle",
+            "type": "String",
+            "required": false,
+            "default": "\"\""
+          },
+          {
+            "name": "counter",
+            "type": "Int",
+            "required": false,
+            "default": "0"
+          },
+          {
+            "name": "isClickable",
+            "type": "Boolean",
+            "required": false,
+            "default": "true"
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "SettingsSwitchItem",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [
+          "Switch"
+        ],
+        "implements": null,
+        "source": {
+          "file": "trassir-uikit/src/commonMain/kotlin/com/uilibrary/ui/common/SettingsItem.kt",
+          "line": 112
+        },
+        "props": [
+          {
+            "name": "title",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "checked",
+            "type": "Boolean",
+            "required": true
+          },
+          {
+            "name": "enabled",
+            "type": "Boolean",
+            "required": false,
+            "default": "true"
+          },
+          {
+            "name": "subtitle",
+            "type": "String",
+            "required": false,
+            "default": "\"\""
+          },
+          {
+            "name": "onCheckedChange",
+            "type": "(Boolean) -> Unit",
+            "required": false,
+            "default": "{}"
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "SettingTariffs",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [],
+        "implements": null,
+        "source": {
+          "file": "trassir-uikit/src/commonMain/kotlin/com/uilibrary/ui/common/SettingsItem.kt",
+          "line": 76
+        },
+        "props": [
+          {
+            "name": "title",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "counter",
+            "type": "Int",
+            "required": true
+          },
+          {
+            "name": "modifier",
+            "type": "Modifier",
+            "required": false,
+            "default": "Modifier"
+          },
+          {
+            "name": "onClick",
+            "type": "() -> Unit",
+            "required": false,
+            "default": "{}"
+          },
+          {
+            "name": "isClickable",
+            "type": "Boolean",
+            "required": false,
+            "default": "true"
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "TitleDescNavigationItem",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [],
+        "implements": null,
+        "source": {
+          "file": "trassir-uikit/src/commonMain/kotlin/com/uilibrary/ui/common/TitleDescNavigationItem.kt",
+          "line": 23
+        },
+        "props": [
+          {
+            "name": "title",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "desc",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "onClick",
+            "type": "() -> Unit",
+            "required": true
+          }
+        ],
+        "tokens": {}
+      }
+    ]
+  },
+  "tokenIndex": {},
+  "warnings": [],
+  "deviations": []
+}

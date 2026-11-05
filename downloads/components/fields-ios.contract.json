@@ -1,0 +1,182 @@
+{
+  "$schema": "trassir-mobile-contract/1",
+  "id": "fields-ios",
+  "component": "Поля и поиск",
+  "version": "0.1.0",
+  "generated": "2026-10-22T16:12:15+03:00",
+  "description": "`TrTextField` — компонент с перечислением сценариев, а не свободное поле: почта, пароль, повтор пароля, имя, MAC-адрес и простой текст. Высота 40, скругление 10, заливка grayscale800.",
+  "level": "custom",
+  "filled": false,
+  "figma": null,
+  "api": {
+    "variants": [],
+    "props": []
+  },
+  "states": [
+    "default",
+    "pressed",
+    "disabled",
+    "loading"
+  ],
+  "anatomy": [],
+  "platforms": {
+    "ios": [
+      {
+        "component": "TrSearchBar",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [
+          "Button",
+          "TextField"
+        ],
+        "implements": null,
+        "source": {
+          "file": "iosApp/TrassirUIKit/Sources/TrassirUIKit/TrSearchBar.swift",
+          "line": 11
+        },
+        "props": [
+          {
+            "name": "searchText",
+            "type": "Binding<String>",
+            "required": true
+          },
+          {
+            "name": "placeholder",
+            "type": "String",
+            "required": false,
+            "default": "\"\""
+          },
+          {
+            "name": "backgroundColor",
+            "type": "Color",
+            "required": false,
+            "default": "TrColor.black"
+          },
+          {
+            "name": "fieldBackgroundColor",
+            "type": "Color",
+            "required": false,
+            "default": "TrColor.grayscale800"
+          },
+          {
+            "name": "cornerRadius",
+            "type": "CGFloat",
+            "required": false,
+            "default": "ModuleConstants.Visual.cornerRadiusNewDesign"
+          },
+          {
+            "name": "horizontalPadding",
+            "type": "CGFloat",
+            "required": false,
+            "default": "16"
+          },
+          {
+            "name": "topPadding",
+            "type": "CGFloat",
+            "required": false,
+            "default": "16"
+          },
+          {
+            "name": "searchIcon",
+            "type": "Image",
+            "required": false,
+            "default": "Image(systemName: \"magnifyingglass\")"
+          },
+          {
+            "name": "clearIcon",
+            "type": "Image",
+            "required": false,
+            "default": "Image(systemName: \"xmark.circle.fill\")"
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "TrTextField",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [
+          "Button"
+        ],
+        "implements": null,
+        "source": {
+          "file": "iosApp/TrassirUIKit/Sources/TrassirUIKit/TrTextField.swift",
+          "line": 56
+        },
+        "props": [
+          {
+            "name": "style",
+            "type": "TrTextFieldStyle<FocusValue>",
+            "required": true
+          },
+          {
+            "name": "title",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "placeholder",
+            "type": "String",
+            "required": false,
+            "default": "\"\""
+          },
+          {
+            "name": "showTitleWhenTextIsEmpty",
+            "type": "Bool",
+            "required": false,
+            "default": "true"
+          },
+          {
+            "name": "text",
+            "type": "Binding<String>",
+            "required": true
+          },
+          {
+            "name": "textFieldTestId",
+            "type": "String",
+            "required": false,
+            "default": "\"\""
+          },
+          {
+            "name": "focusValue",
+            "type": "FocusState<FocusValue?>.Binding",
+            "required": true
+          },
+          {
+            "name": "submitAction",
+            "type": "@escaping () -> Void",
+            "required": true
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "TrTextLink",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [],
+        "implements": null,
+        "source": {
+          "file": "iosApp/TrassirUIKit/Sources/TrassirUIKit/TrTextLink.swift",
+          "line": 11
+        },
+        "props": [
+          {
+            "name": "text",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "linkStyle",
+            "type": "LinkStyle",
+            "required": true
+          }
+        ],
+        "tokens": {}
+      }
+    ]
+  },
+  "tokenIndex": {},
+  "warnings": [],
+  "deviations": []
+}

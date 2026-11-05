@@ -1,0 +1,54 @@
+{
+  "$schema": "trassir-mobile-contract/1",
+  "id": "badges",
+  "component": "Бейджи и счётчики",
+  "version": "0.1.0",
+  "generated": "2026-10-22T16:12:15+03:00",
+  "description": "",
+  "level": "custom",
+  "filled": false,
+  "figma": null,
+  "api": {
+    "variants": [],
+    "props": []
+  },
+  "states": [
+    "default",
+    "pressed",
+    "disabled",
+    "loading"
+  ],
+  "anatomy": [],
+  "platforms": {
+    "android": [
+      {
+        "component": "TariffBadge",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [],
+        "implements": null,
+        "source": {
+          "file": "trassir-uikit/src/main/java/com/uilibrary/ui/common/TariffBadge.kt",
+          "line": 21
+        },
+        "props": [
+          {
+            "name": "badgeKind",
+            "type": "ChannelTariffBadgeKind",
+            "required": true
+          },
+          {
+            "name": "modifier",
+            "type": "Modifier",
+            "required": false,
+            "default": "Modifier"
+          }
+        ],
+        "tokens": {}
+      }
+    ]
+  },
+  "tokenIndex": {},
+  "warnings": [],
+  "deviations": []
+}

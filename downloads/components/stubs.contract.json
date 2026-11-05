@@ -1,0 +1,338 @@
+{
+  "$schema": "trassir-mobile-contract/1",
+  "id": "stubs",
+  "component": "Заглушки и пустые состояния",
+  "version": "0.1.0",
+  "generated": "2026-10-22T16:12:15+03:00",
+  "description": "Пустой экран — это не ошибка, а вход в сценарий. Каждая заглушка называет причину и даёт действие.",
+  "level": "custom",
+  "filled": false,
+  "figma": null,
+  "api": {
+    "variants": [],
+    "props": []
+  },
+  "states": [
+    "default",
+    "pressed",
+    "disabled",
+    "loading"
+  ],
+  "anatomy": [],
+  "platforms": {
+    "android": [
+      {
+        "component": "CommonErrorBody",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [],
+        "implements": null,
+        "source": {
+          "file": "trassir-uikit/src/commonMain/kotlin/com/uilibrary/core/sheet/CommonErrorBody.kt",
+          "line": 34
+        },
+        "props": [
+          {
+            "name": "firstMessage",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "error",
+            "type": "ErrorDescription",
+            "required": true
+          },
+          {
+            "name": "whatToDoMessage",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "modifier",
+            "type": "Modifier",
+            "required": false,
+            "default": "Modifier"
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "ListIsEmpty",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [],
+        "implements": null,
+        "source": {
+          "file": "trassir-uikit/src/commonMain/kotlin/com/uilibrary/ui/common/NotFound.kt",
+          "line": 52
+        },
+        "props": [
+          {
+            "name": "messageText",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "scrollable",
+            "type": "Boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "buttonText",
+            "type": "String",
+            "required": false,
+            "default": "\"\""
+          },
+          {
+            "name": "buttonIcon",
+            "type": "Painter?",
+            "required": false,
+            "default": "null"
+          },
+          {
+            "name": "onButtonClick",
+            "type": "() -> Unit",
+            "required": false,
+            "default": "{}"
+          },
+          {
+            "name": "locatorTagsText",
+            "type": "String",
+            "required": false,
+            "default": "\"\""
+          },
+          {
+            "name": "locatorTagsButton",
+            "type": "String",
+            "required": false,
+            "default": "\"\""
+          },
+          {
+            "name": "showButton",
+            "type": "Boolean",
+            "required": false,
+            "default": "true"
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "NetworkErrorBody",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [],
+        "implements": null,
+        "source": {
+          "file": "trassir-uikit/src/commonMain/kotlin/com/uilibrary/core/sheet/UIErrnoDescription.kt",
+          "line": 88
+        },
+        "props": [
+          {
+            "name": "firstMessage",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "desc",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "whatToDoMessage",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "modifier",
+            "type": "Modifier",
+            "required": false,
+            "default": "Modifier"
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "NotFound",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [],
+        "implements": null,
+        "source": {
+          "file": "trassir-uikit/src/commonMain/kotlin/com/uilibrary/ui/common/NotFound.kt",
+          "line": 33
+        },
+        "props": [
+          {
+            "name": "messageText",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "buttonText",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "buttonOnClick",
+            "type": "() -> Unit",
+            "required": true
+          },
+          {
+            "name": "locatorTagsText",
+            "type": "String",
+            "required": false,
+            "default": "\"\""
+          },
+          {
+            "name": "locatorTagsButton",
+            "type": "String",
+            "required": false,
+            "default": "\"\""
+          },
+          {
+            "name": "showButton",
+            "type": "Boolean",
+            "required": false,
+            "default": "true"
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "ResultBodyBlock",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [],
+        "implements": null,
+        "source": {
+          "file": "trassir-uikit/src/commonMain/kotlin/com/uilibrary/ui/common/ResultBodyBlock.kt",
+          "line": 20
+        },
+        "props": [
+          {
+            "name": "painter",
+            "type": "Painter",
+            "required": true
+          },
+          {
+            "name": "title",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "body",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "subBody",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "buttonText",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "onClickButton",
+            "type": "() -> Unit",
+            "required": true
+          },
+          {
+            "name": "modifier",
+            "type": "Modifier",
+            "required": false,
+            "default": "Modifier"
+          },
+          {
+            "name": "colorButton",
+            "type": "ButtonColors",
+            "required": false,
+            "default": "ButtonDefaults.buttonColors()"
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "Stub",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [
+          "Button"
+        ],
+        "implements": null,
+        "source": {
+          "file": "trassir-uikit/src/commonMain/kotlin/com/uilibrary/ui/common/NotFound.kt",
+          "line": 103
+        },
+        "props": [
+          {
+            "name": "icon",
+            "type": "Painter",
+            "required": true
+          },
+          {
+            "name": "text",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "scrollable",
+            "type": "Boolean",
+            "required": false,
+            "default": "false"
+          },
+          {
+            "name": "textLocatorTag",
+            "type": "String",
+            "required": false,
+            "default": "\"\""
+          },
+          {
+            "name": "buttonIcon",
+            "type": "Painter?",
+            "required": false,
+            "default": "null"
+          },
+          {
+            "name": "buttonText",
+            "type": "String?",
+            "required": false,
+            "default": "null"
+          },
+          {
+            "name": "buttonLocatorTag",
+            "type": "String",
+            "required": false,
+            "default": "\"\""
+          },
+          {
+            "name": "onButtonClick",
+            "type": "() -> Unit",
+            "required": false,
+            "default": "{}"
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "StubConnection",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [],
+        "implements": null,
+        "source": {
+          "file": "trassir-uikit/src/commonMain/kotlin/com/uilibrary/ui/common/Stub.kt",
+          "line": 46
+        },
+        "props": [],
+        "tokens": {}
+      }
+    ]
+  },
+  "tokenIndex": {},
+  "warnings": [],
+  "deviations": []
+}

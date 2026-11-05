@@ -1,0 +1,396 @@
+{
+  "$schema": "trassir-mobile-contract/1",
+  "id": "states",
+  "component": "Состояния и обратная связь",
+  "version": "0.1.0",
+  "generated": "2026-10-22T16:12:15+03:00",
+  "description": "Пустые состояния, ошибки, баннеры и индикаторы. Тексты берутся из общего для двух платформ файла строк, а подача — своя.",
+  "level": "styled",
+  "filled": false,
+  "figma": null,
+  "api": {
+    "variants": [],
+    "props": []
+  },
+  "states": [
+    "default",
+    "pressed",
+    "disabled",
+    "loading"
+  ],
+  "anatomy": [],
+  "platforms": {
+    "ios": [
+      {
+        "component": "CircularActivityIndicatory",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [],
+        "implements": null,
+        "source": {
+          "file": "iosApp/TrassirUIKit/Sources/TrassirUIKit/CircularActivityIndicatory.swift",
+          "line": 10
+        },
+        "props": [
+          {
+            "name": "degrees",
+            "type": "Double",
+            "required": false,
+            "default": "-360.0"
+          },
+          {
+            "name": "duration",
+            "type": "Double",
+            "required": false,
+            "default": "0.0"
+          },
+          {
+            "name": "color",
+            "type": "Color",
+            "required": false,
+            "default": "TrColor.grayscale100"
+          },
+          {
+            "name": "size",
+            "type": "CGFloat",
+            "required": false,
+            "default": "40"
+          },
+          {
+            "name": "testID",
+            "type": "String",
+            "required": false,
+            "default": "\"\""
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "ErrorFullScreenView",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [],
+        "implements": null,
+        "source": {
+          "file": "iosApp/TrassirUIKit/Sources/TrassirUIKit/TrErrorView.swift",
+          "line": 175
+        },
+        "props": [
+          {
+            "name": "title",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "image",
+            "type": "Image",
+            "required": true
+          },
+          {
+            "name": "errorDescription",
+            "type": "String",
+            "required": false,
+            "default": "\"\""
+          },
+          {
+            "name": "errorCode",
+            "type": "String",
+            "required": false,
+            "default": "\"\""
+          },
+          {
+            "name": "moduleErrorDescription",
+            "type": "String",
+            "required": false,
+            "default": "\"\""
+          },
+          {
+            "name": "annotationTitle",
+            "type": "String",
+            "required": false,
+            "default": "\"\""
+          },
+          {
+            "name": "annotations",
+            "type": "[String]",
+            "required": false,
+            "default": "[]"
+          },
+          {
+            "name": "annotationStyle",
+            "type": "TrTypography.Style",
+            "required": false,
+            "default": ".caption1"
+          },
+          {
+            "name": "secondButtonTitle",
+            "type": "String",
+            "required": false,
+            "default": "\"\""
+          },
+          {
+            "name": "secondButtontAction",
+            "type": "@escaping () async -> Void",
+            "required": false,
+            "default": "{}"
+          },
+          {
+            "name": "mainButtonTitle",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "bottomPadding",
+            "type": "CGFloat",
+            "required": true
+          },
+          {
+            "name": "action",
+            "type": "@escaping () async -> Void",
+            "required": true
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "InfoBannerView",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [],
+        "implements": null,
+        "source": {
+          "file": "iosApp/TrassirUIKit/Sources/TrassirUIKit/InfoBannerView.swift",
+          "line": 11
+        },
+        "props": [
+          {
+            "name": "title",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "subtitle",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "height",
+            "type": "CGFloat",
+            "required": false,
+            "default": "50"
+          },
+          {
+            "name": "padding",
+            "type": "CGFloat",
+            "required": false,
+            "default": "12"
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "LoadingView",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [],
+        "implements": null,
+        "source": {
+          "file": "iosApp/TrassirUIKit/Sources/TrassirUIKit/LoadingView.swift",
+          "line": 11
+        },
+        "props": [
+          {
+            "name": "text",
+            "type": "String?",
+            "required": false,
+            "default": "nil"
+          },
+          {
+            "name": "image",
+            "type": "Image",
+            "required": true
+          },
+          {
+            "name": "backgroundColor",
+            "type": "Color",
+            "required": false,
+            "default": "TrColor.grayscale900"
+          },
+          {
+            "name": "navBarHidden",
+            "type": "Bool",
+            "required": false,
+            "default": "true"
+          },
+          {
+            "name": "progressBarTestID",
+            "type": "String",
+            "required": false,
+            "default": "\"\""
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "NoContentView",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [],
+        "implements": null,
+        "source": {
+          "file": "iosApp/TrassirUIKit/Sources/TrassirUIKit/NoContentView.swift",
+          "line": 10
+        },
+        "props": [
+          {
+            "name": "text",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "image",
+            "type": "Image",
+            "required": true
+          },
+          {
+            "name": "imageSize",
+            "type": "(width: CGFloat, height: CGFloat)",
+            "required": false,
+            "default": "(width: 124, height: 124)"
+          },
+          {
+            "name": "backgroundColor",
+            "type": "Color",
+            "required": false,
+            "default": "TrColor.grayscale900"
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "TrBadgeView",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [],
+        "implements": null,
+        "source": {
+          "file": "iosApp/TrassirUIKit/Sources/TrassirUIKit/TrBadgeView.swift",
+          "line": 10
+        },
+        "props": [
+          {
+            "name": "type",
+            "type": "BadgeType",
+            "required": true
+          },
+          {
+            "name": "style",
+            "type": "TrTypography.Style",
+            "required": false,
+            "default": ".ndCaption1"
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "TrErrorView",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [],
+        "implements": null,
+        "source": {
+          "file": "iosApp/TrassirUIKit/Sources/TrassirUIKit/TrErrorView.swift",
+          "line": 45
+        },
+        "props": [
+          {
+            "name": "error",
+            "type": "ErrorInfo",
+            "required": true
+          },
+          {
+            "name": "buttonTitle",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "action",
+            "type": "@escaping () -> Void",
+            "required": true
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "TrProgressBar",
+        "level": "styled",
+        "levelChecked": false,
+        "base": [
+          "ProgressView"
+        ],
+        "implements": null,
+        "source": {
+          "file": "iosApp/TrassirUIKit/Sources/TrassirUIKit/TrProgressBar.swift",
+          "line": 10
+        },
+        "props": [
+          {
+            "name": "value",
+            "type": "Double",
+            "required": true
+          },
+          {
+            "name": "total",
+            "type": "Double",
+            "required": true
+          },
+          {
+            "name": "text",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "textColor",
+            "type": "Color",
+            "required": false,
+            "default": "TrColor.grayscale100"
+          },
+          {
+            "name": "height",
+            "type": "CGFloat",
+            "required": false,
+            "default": "ModuleConstants.Visual.buttonHeightNewDesign"
+          },
+          {
+            "name": "cornerRadius",
+            "type": "CGFloat",
+            "required": false,
+            "default": "16"
+          },
+          {
+            "name": "fillColor",
+            "type": "Color",
+            "required": false,
+            "default": "TrColor.grayscale700"
+          },
+          {
+            "name": "backgroundColor",
+            "type": "Color",
+            "required": false,
+            "default": ".clear"
+          },
+          {
+            "name": "borderColor",
+            "type": "Color",
+            "required": false,
+            "default": "TrColor.grayscale700"
+          }
+        ],
+        "tokens": {}
+      }
+    ]
+  },
+  "tokenIndex": {},
+  "warnings": [],
+  "deviations": []
+}

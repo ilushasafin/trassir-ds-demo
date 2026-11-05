@@ -1,0 +1,77 @@
+{
+  "$schema": "trassir-mobile-contract/1",
+  "id": "dialogs",
+  "component": "Диалоги",
+  "version": "0.1.0",
+  "generated": "2026-10-22T16:12:15+03:00",
+  "description": "Диалог отличается от шторки одним: он не закрывается нажатием вне и требует явного ответа.",
+  "level": "styled",
+  "filled": false,
+  "figma": null,
+  "api": {
+    "variants": [],
+    "props": []
+  },
+  "states": [
+    "default",
+    "pressed",
+    "disabled",
+    "loading"
+  ],
+  "anatomy": [],
+  "platforms": {
+    "android": [
+      {
+        "component": "AlertDialog",
+        "level": "styled",
+        "levelChecked": false,
+        "base": [
+          "AlertDialog"
+        ],
+        "implements": null,
+        "source": {
+          "file": "trassir-uikit/src/commonMain/kotlin/com/uilibrary/ui/common/AlarmDialog.kt",
+          "line": 17
+        },
+        "props": [
+          {
+            "name": "message",
+            "type": "StringResource",
+            "required": true
+          },
+          {
+            "name": "onOkClick",
+            "type": "() -> Unit",
+            "required": true
+          },
+          {
+            "name": "onDismiss",
+            "type": "() -> Unit",
+            "required": true
+          },
+          {
+            "name": "okButtonText",
+            "type": "StringResource",
+            "required": true
+          },
+          {
+            "name": "cancelButtonText",
+            "type": "StringResource",
+            "required": false,
+            "default": "MR.strings.cancel"
+          },
+          {
+            "name": "cancelable",
+            "type": "Boolean",
+            "required": false,
+            "default": "true"
+          }
+        ],
+        "tokens": {}
+      }
+    ]
+  },
+  "tokenIndex": {},
+  "warnings": [],
+  "deviations": []
+}

@@ -1,0 +1,79 @@
+{
+  "$schema": "trassir-mobile-contract/1",
+  "id": "search",
+  "component": "Поиск",
+  "version": "0.1.0",
+  "generated": "2026-10-22T16:12:15+03:00",
+  "description": "",
+  "level": "custom",
+  "filled": false,
+  "figma": null,
+  "api": {
+    "variants": [],
+    "props": []
+  },
+  "states": [
+    "default",
+    "pressed",
+    "disabled",
+    "loading"
+  ],
+  "anatomy": [],
+  "platforms": {
+    "android": [
+      {
+        "component": "SearchBarCustom",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [
+          "IconButton",
+          "OutlinedTextField",
+          "TopAppBar"
+        ],
+        "implements": null,
+        "source": {
+          "file": "trassir-uikit/src/commonMain/kotlin/com/uilibrary/ui/common/SearchBarCustom.kt",
+          "line": 40
+        },
+        "props": [
+          {
+            "name": "searchText",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "modifier",
+            "type": "Modifier",
+            "required": false,
+            "default": "Modifier"
+          },
+          {
+            "name": "placeholderText",
+            "type": "String",
+            "required": false,
+            "default": "\"\""
+          },
+          {
+            "name": "onSearchTextChanged",
+            "type": "(String) -> Unit",
+            "required": true
+          },
+          {
+            "name": "onBackClick",
+            "type": "() -> Unit",
+            "required": true
+          },
+          {
+            "name": "onClearClick",
+            "type": "() -> Unit",
+            "required": true
+          }
+        ],
+        "tokens": {}
+      }
+    ]
+  },
+  "tokenIndex": {},
+  "warnings": [],
+  "deviations": []
+}

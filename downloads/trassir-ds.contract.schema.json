@@ -1,0 +1,525 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://trassir.ru/ds/trassir-ds.contract.schema.json",
+  "title": "Контракт дизайн-системы TRASSIR Cloud Mobile",
+  "description": "Токены в формате W3C DTCG 2025.10 плюс мета в $extensions[\"ru.dssl.trassir\"]. Размеры в px (1 px = 1 pt iOS = 1 dp Android), цвет sRGB с hex, длительность в ms.",
+  "type": "object",
+  "required": [
+    "$extensions"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "$description": {
+      "type": "string"
+    },
+    "$extensions": {
+      "type": "object",
+      "required": [
+        "ru.dssl.trassir"
+      ],
+      "properties": {
+        "ru.dssl.trassir": {
+          "$ref": "#/$defs/contractMeta"
+        }
+      }
+    }
+  },
+  "patternProperties": {
+    "^[^${}.][^{}.]*$": {
+      "$ref": "#/$defs/node"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "contractMeta": {
+      "type": "object",
+      "required": [
+        "contractVersion",
+        "dtcgVersion",
+        "generatedAt",
+        "sourceCommit",
+        "platforms",
+        "themes",
+        "openConflicts"
+      ],
+      "properties": {
+        "contractVersion": {
+          "type": "string",
+          "pattern": "^(\\d+\\.\\d+\\.\\d+(\\+unreleased)?)$"
+        },
+        "dtcgVersion": {
+          "const": "2025.10"
+        },
+        "generatedAt": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sourceCommit": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "appCommit": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "platforms": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "android",
+              "ios"
+            ]
+          }
+        },
+        "themes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "openConflicts": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "units": {
+          "type": "object"
+        },
+        "counts": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": false
+    },
+    "node": {
+      "if": {
+        "type": "object",
+        "required": [
+          "$value"
+        ]
+      },
+      "then": {
+        "$ref": "#/$defs/token"
+      },
+      "else": {
+        "$ref": "#/$defs/group"
+      }
+    },
+    "group": {
+      "type": "object",
+      "properties": {
+        "$type": {
+          "enum": [
+            "color",
+            "dimension",
+            "fontFamily",
+            "fontWeight",
+            "number",
+            "typography",
+            "duration",
+            "cubicBezier"
+          ]
+        },
+        "$description": {
+          "type": "string"
+        },
+        "$deprecated": {
+          "type": [
+            "boolean",
+            "string"
+          ]
+        },
+        "$extensions": {
+          "type": "object"
+        }
+      },
+      "patternProperties": {
+        "^[^${}.][^{}.]*$": {
+          "$ref": "#/$defs/node"
+        }
+      },
+      "additionalProperties": false
+    },
+    "token": {
+      "type": "object",
+      "required": [
+        "$value",
+        "$extensions"
+      ],
+      "properties": {
+        "$type": {
+          "enum": [
+            "color",
+            "dimension",
+            "fontFamily",
+            "fontWeight",
+            "number",
+            "typography",
+            "duration",
+            "cubicBezier"
+          ]
+        },
+        "$value": {},
+        "$description": {
+          "type": "string"
+        },
+        "$deprecated": {
+          "type": [
+            "boolean",
+            "string"
+          ]
+        },
+        "$extensions": {
+          "type": "object",
+          "required": [
+            "ru.dssl.trassir"
+          ],
+          "properties": {
+            "ru.dssl.trassir": {
+              "$ref": "#/$defs/tokenMeta"
+            }
+          }
+        }
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "required": [
+              "$type",
+              "$value"
+            ],
+            "properties": {
+              "$type": {
+                "enum": [
+                  "color",
+                  "dimension",
+                  "number",
+                  "typography",
+                  "duration",
+                  "cubicBezier"
+                ]
+              },
+              "$value": {
+                "type": "string"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "$value": {
+                "pattern": "^\\{[^{}]+\\}$"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "$type",
+              "$value"
+            ],
+            "properties": {
+              "$type": {
+                "const": "color"
+              },
+              "$value": {
+                "type": "object"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "$value": {
+                "$ref": "#/$defs/color"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "$type",
+              "$value"
+            ],
+            "properties": {
+              "$type": {
+                "const": "dimension"
+              },
+              "$value": {
+                "type": "object"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "$value": {
+                "$ref": "#/$defs/dimension"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "$type",
+              "$value"
+            ],
+            "properties": {
+              "$type": {
+                "const": "duration"
+              },
+              "$value": {
+                "type": "object"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "$value": {
+                "$ref": "#/$defs/duration"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "color": {
+      "type": "object",
+      "required": [
+        "colorSpace",
+        "components",
+        "hex"
+      ],
+      "properties": {
+        "colorSpace": {
+          "const": "srgb"
+        },
+        "components": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        },
+        "alpha": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "hex": {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "dimension": {
+      "type": "object",
+      "required": [
+        "value",
+        "unit"
+      ],
+      "properties": {
+        "value": {
+          "type": "number"
+        },
+        "unit": {
+          "const": "px"
+        }
+      },
+      "additionalProperties": false
+    },
+    "duration": {
+      "type": "object",
+      "required": [
+        "value",
+        "unit"
+      ],
+      "properties": {
+        "value": {
+          "type": "number",
+          "minimum": 0
+        },
+        "unit": {
+          "const": "ms"
+        }
+      },
+      "additionalProperties": false
+    },
+    "tokenMeta": {
+      "type": "object",
+      "required": [
+        "since",
+        "status"
+      ],
+      "properties": {
+        "since": {
+          "type": "string",
+          "pattern": "^(\\d+\\.\\d+\\.\\d+(\\+unreleased)?|unreleased)$"
+        },
+        "status": {
+          "enum": [
+            "stable",
+            "deprecated",
+            "conflict"
+          ]
+        },
+        "code": {
+          "type": "object",
+          "properties": {
+            "compose": {
+              "type": "string"
+            },
+            "swiftui": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "source": {
+          "type": "object",
+          "properties": {
+            "symbol": {
+              "type": "string"
+            },
+            "file": {
+              "type": "string"
+            },
+            "line": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "note": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "replacedBy": {
+          "type": "string"
+        },
+        "removeIn": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        },
+        "conflict": {
+          "type": "object",
+          "required": [
+            "id",
+            "title",
+            "values"
+          ],
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "note": {
+              "type": "string"
+            },
+            "values": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "platform",
+                  "key",
+                  "value"
+                ],
+                "properties": {
+                  "platform": {
+                    "enum": [
+                      "android",
+                      "ios"
+                    ]
+                  },
+                  "key": {
+                    "type": "string"
+                  },
+                  "sourceSet": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        "todo": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "actual": {
+          "type": "object"
+        },
+        "resolved": {
+          "type": "string"
+        },
+        "origin": {
+          "enum": [
+            "token",
+            "literal",
+            "default"
+          ]
+        },
+        "snippet": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "deprecated"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "replacedBy",
+              "removeIn"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "conflict"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "conflict"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

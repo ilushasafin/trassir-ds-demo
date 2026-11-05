@@ -1,0 +1,250 @@
+{
+  "$schema": "trassir-mobile-contract/1",
+  "id": "cards",
+  "component": "Карточки устройств",
+  "version": "0.1.0",
+  "generated": "2026-10-22T16:12:15+03:00",
+  "description": "Главный объект продукта. Карточка камеры показывает живой кадр, имя и состояние.",
+  "level": "styled",
+  "filled": false,
+  "figma": null,
+  "api": {
+    "variants": [],
+    "props": []
+  },
+  "states": [
+    "онлайн",
+    "загрузка",
+    "нет видео",
+    "нет связи",
+    "приватно",
+    "заблокировано"
+  ],
+  "anatomy": [],
+  "platforms": {
+    "android": [
+      {
+        "component": "CameraCard",
+        "level": "styled",
+        "levelChecked": false,
+        "base": [
+          "DeviceCard → OutlinedCard"
+        ],
+        "implements": null,
+        "source": {
+          "file": "trassir-uikit/src/main/java/com/uilibrary/ui/common/DeviceCard.kt",
+          "line": 111
+        },
+        "props": [
+          {
+            "name": "name",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "image",
+            "type": "Thumbnail?",
+            "required": true
+          },
+          {
+            "name": "tariff",
+            "type": "String?",
+            "required": true
+          },
+          {
+            "name": "isSelected",
+            "type": "Boolean",
+            "required": true
+          },
+          {
+            "name": "isCheckboxShowing",
+            "type": "Boolean",
+            "required": false,
+            "default": "true"
+          },
+          {
+            "name": "onCardClicked",
+            "type": "() -> Unit",
+            "required": true
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "CameraStackInside",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [
+          "Card"
+        ],
+        "implements": null,
+        "source": {
+          "file": "trassir-uikit/src/main/java/com/uilibrary/ui/stackCameras/CameraItem.kt",
+          "line": 38
+        },
+        "props": [
+          {
+            "name": "image",
+            "type": "Thumbnail?",
+            "required": true
+          },
+          {
+            "name": "name",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "onClick",
+            "type": "() -> Unit",
+            "required": true
+          },
+          {
+            "name": "urlThumbnailLoadDelayMs",
+            "type": "Long",
+            "required": false,
+            "default": "0L"
+          },
+          {
+            "name": "badge",
+            "type": "(@Composable () -> Unit)?",
+            "required": false,
+            "default": "null"
+          },
+          {
+            "name": "composableStub",
+            "type": "@Composable () -> Unit",
+            "required": true
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "DeviceCard",
+        "level": "styled",
+        "levelChecked": false,
+        "base": [
+          "OutlinedCard"
+        ],
+        "implements": null,
+        "source": {
+          "file": "trassir-uikit/src/main/java/com/uilibrary/ui/common/DeviceCard.kt",
+          "line": 34
+        },
+        "props": [
+          {
+            "name": "name",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "tariff",
+            "type": "String?",
+            "required": true
+          },
+          {
+            "name": "isCheckboxShowing",
+            "type": "Boolean",
+            "required": true
+          },
+          {
+            "name": "isChecked",
+            "type": "Boolean",
+            "required": true
+          },
+          {
+            "name": "isCardClickable",
+            "type": "Boolean",
+            "required": true
+          },
+          {
+            "name": "onCardClick",
+            "type": "() -> Unit",
+            "required": true
+          },
+          {
+            "name": "onCheckboxClicked",
+            "type": "() -> Unit",
+            "required": true
+          },
+          {
+            "name": "image",
+            "type": "@Composable RowScope.() -> Unit",
+            "required": true
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "MoreCamerasItem",
+        "level": "styled",
+        "levelChecked": false,
+        "base": [
+          "Card"
+        ],
+        "implements": null,
+        "source": {
+          "file": "trassir-uikit/src/main/java/com/uilibrary/ui/stackCameras/CameraItem.kt",
+          "line": 100
+        },
+        "props": [
+          {
+            "name": "count",
+            "type": "Int",
+            "required": true
+          },
+          {
+            "name": "onClick",
+            "type": "() -> Unit",
+            "required": true
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "ServerCard",
+        "level": "styled",
+        "levelChecked": false,
+        "base": [
+          "DeviceCard → OutlinedCard"
+        ],
+        "implements": null,
+        "source": {
+          "file": "trassir-uikit/src/main/java/com/uilibrary/ui/common/DeviceCard.kt",
+          "line": 85
+        },
+        "props": [
+          {
+            "name": "name",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "tariff",
+            "type": "String?",
+            "required": true
+          },
+          {
+            "name": "isSelected",
+            "type": "Boolean",
+            "required": true
+          },
+          {
+            "name": "isCheckboxShowing",
+            "type": "Boolean",
+            "required": false,
+            "default": "true"
+          },
+          {
+            "name": "onCheckboxClicked",
+            "type": "() -> Unit",
+            "required": true
+          }
+        ],
+        "tokens": {}
+      }
+    ]
+  },
+  "tokenIndex": {},
+  "warnings": [],
+  "deviations": []
+}

@@ -1,0 +1,141 @@
+{
+  "$schema": "trassir-mobile-contract/1",
+  "id": "loading",
+  "component": "Загрузка",
+  "version": "0.1.0",
+  "generated": "2026-10-22T16:12:15+03:00",
+  "description": "",
+  "level": "styled",
+  "filled": false,
+  "figma": null,
+  "api": {
+    "variants": [],
+    "props": []
+  },
+  "states": [
+    "default",
+    "pressed",
+    "disabled",
+    "loading"
+  ],
+  "anatomy": [],
+  "platforms": {
+    "android": [
+      {
+        "component": "AnimatedLinearProgressIndicator",
+        "level": "styled",
+        "levelChecked": false,
+        "base": [
+          "LinearProgressIndicator"
+        ],
+        "implements": null,
+        "source": {
+          "file": "trassir-uikit/src/commonMain/kotlin/com/uilibrary/ui/common/ProgressBar.kt",
+          "line": 44
+        },
+        "props": [
+          {
+            "name": "indicatorProgress",
+            "type": "Float",
+            "required": true
+          },
+          {
+            "name": "lifecycleOwner",
+            "type": "LifecycleOwner",
+            "required": false,
+            "default": "LocalLifecycleOwner.current"
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "CenteredCircularIndicator",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [
+          "CircularProgressIndicator"
+        ],
+        "implements": null,
+        "source": {
+          "file": "trassir-uikit/src/commonMain/kotlin/com/uilibrary/ui/common/CenteredCircularIndicator.kt",
+          "line": 17
+        },
+        "props": [
+          {
+            "name": "isShow",
+            "type": "Boolean",
+            "required": true
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "ConditionalLinearProgressIndicator",
+        "level": "styled",
+        "levelChecked": false,
+        "base": [
+          "LinearProgressIndicator"
+        ],
+        "implements": null,
+        "source": {
+          "file": "trassir-uikit/src/commonMain/kotlin/com/uilibrary/ui/common/ProgressBar.kt",
+          "line": 28
+        },
+        "props": [
+          {
+            "name": "progress",
+            "type": "Float",
+            "required": true
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "Loading",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [
+          "CircularProgressIndicator"
+        ],
+        "implements": null,
+        "source": {
+          "file": "trassir-uikit/src/commonMain/kotlin/com/uilibrary/ui/common/Loading.kt",
+          "line": 33
+        },
+        "props": [
+          {
+            "name": "modifier",
+            "type": "Modifier",
+            "required": false,
+            "default": "Modifier"
+          },
+          {
+            "name": "title",
+            "type": "String",
+            "required": false,
+            "default": "\"\""
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "LoadingWithIconCloud",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [
+          "CircularProgressIndicator"
+        ],
+        "implements": null,
+        "source": {
+          "file": "trassir-uikit/src/commonMain/kotlin/com/uilibrary/ui/common/Loading.kt",
+          "line": 60
+        },
+        "props": [],
+        "tokens": {}
+      }
+    ]
+  },
+  "tokenIndex": {},
+  "warnings": [],
+  "deviations": []
+}

@@ -1,0 +1,99 @@
+{
+  "$schema": "trassir-mobile-contract/1",
+  "id": "appbar",
+  "component": "Шапка экрана",
+  "version": "0.1.0",
+  "generated": "2026-10-22T16:12:15+03:00",
+  "description": "",
+  "level": "styled",
+  "filled": false,
+  "figma": null,
+  "api": {
+    "variants": [],
+    "props": []
+  },
+  "states": [
+    "default",
+    "pressed",
+    "disabled",
+    "loading"
+  ],
+  "anatomy": [],
+  "platforms": {
+    "android": [
+      {
+        "component": "ScreenAppBar",
+        "level": "styled",
+        "levelChecked": false,
+        "base": [
+          "IconButton",
+          "TopAppBar"
+        ],
+        "implements": null,
+        "source": {
+          "file": "trassir-uikit/src/commonMain/kotlin/com/uilibrary/ui/common/ScreenAppBar.kt",
+          "line": 27
+        },
+        "props": [
+          {
+            "name": "title",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "onBackPressed",
+            "type": "() -> Unit",
+            "required": true
+          },
+          {
+            "name": "locatorBack",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "locatorTitle",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "actions",
+            "type": "@Composable RowScope.() -> Unit",
+            "required": false,
+            "default": "{}"
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "TopBar",
+        "level": "styled",
+        "levelChecked": false,
+        "base": [
+          "CenterAlignedTopAppBar",
+          "IconButton"
+        ],
+        "implements": null,
+        "source": {
+          "file": "trassir-uikit/src/commonMain/kotlin/com/uilibrary/ui/common/TopBar.kt",
+          "line": 17
+        },
+        "props": [
+          {
+            "name": "text",
+            "type": "String",
+            "required": true
+          },
+          {
+            "name": "onBackPressed",
+            "type": "() -> Unit",
+            "required": true
+          }
+        ],
+        "tokens": {}
+      }
+    ]
+  },
+  "tokenIndex": {},
+  "warnings": [],
+  "deviations": []
+}

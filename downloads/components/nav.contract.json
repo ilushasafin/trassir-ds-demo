@@ -1,0 +1,104 @@
+{
+  "$schema": "trassir-mobile-contract/1",
+  "id": "nav",
+  "component": "Навигация",
+  "version": "0.1.0",
+  "generated": "2026-10-22T16:12:15+03:00",
+  "description": "Три верхних раздела, между ними переключение вкладками. Состояние каждого раздела сохраняется при переключении.",
+  "level": "styled",
+  "filled": false,
+  "figma": null,
+  "api": {
+    "variants": [],
+    "props": []
+  },
+  "states": [
+    "default",
+    "pressed",
+    "disabled",
+    "loading"
+  ],
+  "anatomy": [],
+  "platforms": {
+    "android": [
+      {
+        "component": "TrassirBottomBar",
+        "level": "custom",
+        "levelChecked": false,
+        "base": [
+          "BadgedBox",
+          "NavigationBarItem"
+        ],
+        "implements": null,
+        "source": {
+          "file": "trassir-uikit/src/commonMain/kotlin/com/uilibrary/ui/common/bottomMenu/TrassirBottomBar.kt",
+          "line": 33
+        },
+        "props": [
+          {
+            "name": "topDestinations",
+            "type": "List<TopLevelDestination>",
+            "required": true
+          },
+          {
+            "name": "onNavigateToTopLevelDestination",
+            "type": "(route: String) -> Unit",
+            "required": true
+          },
+          {
+            "name": "currentDestination",
+            "type": "NavDestination?",
+            "required": true
+          },
+          {
+            "name": "badge",
+            "type": "(Int) -> String",
+            "required": false,
+            "default": "{ \"\" }"
+          }
+        ],
+        "tokens": {}
+      },
+      {
+        "component": "TrassirNavRail",
+        "level": "styled",
+        "levelChecked": false,
+        "base": [
+          "NavigationRail"
+        ],
+        "implements": null,
+        "source": {
+          "file": "trassir-uikit/src/commonMain/kotlin/com/uilibrary/ui/common/bottomMenu/TrassirNavRail.kt",
+          "line": 24
+        },
+        "props": [
+          {
+            "name": "topDestinations",
+            "type": "List<TopLevelDestination>",
+            "required": true
+          },
+          {
+            "name": "onNavigateToTopLevelDestination",
+            "type": "(route: String) -> Unit",
+            "required": true
+          },
+          {
+            "name": "currentDestination",
+            "type": "NavDestination?",
+            "required": true
+          },
+          {
+            "name": "modifier",
+            "type": "Modifier",
+            "required": false,
+            "default": "Modifier"
+          }
+        ],
+        "tokens": {}
+      }
+    ]
+  },
+  "tokenIndex": {},
+  "warnings": [],
+  "deviations": []
+}
